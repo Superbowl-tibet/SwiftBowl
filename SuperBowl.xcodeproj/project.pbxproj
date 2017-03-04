@@ -23,10 +23,11 @@
 		95AD42641E6AAC6A00865CAD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD42621E6AAC6A00865CAD /* ResultViewController.swift */; };
 		95AD42651E6AAC6A00865CAD /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AD42631E6AAC6A00865CAD /* ResultViewController.xib */; };
 		EFC05CAE1E6AAB8500EBB554 /* SuperBowlAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC05CAD1E6AAB8500EBB554 /* SuperBowlAudioEngine.swift */; };
-		EFC05CB11E6AAB8B00EBB554 /* sample-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFC05CAF1E6AAB8B00EBB554 /* sample-1.mp3 */; };
-		EFC05CB21E6AAB8B00EBB554 /* sample-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFC05CB01E6AAB8B00EBB554 /* sample-2.mp3 */; };
 		EFC05CB41E6AAD9600EBB554 /* samle-3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFC05CB31E6AAD9600EBB554 /* samle-3.mp3 */; };
 		EFC05CB51E6AB28600EBB554 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD425E1E6AAC1E00865CAD /* LoginViewController.swift */; };
+		EFC05CB81E6AB99200EBB554 /* sample-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFC05CB61E6AB99200EBB554 /* sample-1.mp3 */; };
+		EFC05CB91E6AB99200EBB554 /* sample-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFC05CB71E6AB99200EBB554 /* sample-2.mp3 */; };
+		EFC05CBA1E6AB9D100EBB554 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AD425F1E6AAC1E00865CAD /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,9 +53,9 @@
 		95AD42631E6AAC6A00865CAD /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.release.xcconfig"; sourceTree = "<group>"; };
 		EFC05CAD1E6AAB8500EBB554 /* SuperBowlAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperBowlAudioEngine.swift; sourceTree = "<group>"; };
-		EFC05CAF1E6AAB8B00EBB554 /* sample-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-1.mp3"; sourceTree = "<group>"; };
-		EFC05CB01E6AAB8B00EBB554 /* sample-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-2.mp3"; sourceTree = "<group>"; };
 		EFC05CB31E6AAD9600EBB554 /* samle-3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "samle-3.mp3"; sourceTree = "<group>"; };
+		EFC05CB61E6AB99200EBB554 /* sample-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-1.mp3"; sourceTree = "<group>"; };
+		EFC05CB71E6AB99200EBB554 /* sample-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-2.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +158,8 @@
 			children = (
 				49413D521E6AA30600AEEA2B /* AudioEngine.swift */,
 				EFC05CAD1E6AAB8500EBB554 /* SuperBowlAudioEngine.swift */,
-				EFC05CAF1E6AAB8B00EBB554 /* sample-1.mp3 */,
-				EFC05CB01E6AAB8B00EBB554 /* sample-2.mp3 */,
+				EFC05CB61E6AB99200EBB554 /* sample-1.mp3 */,
+				EFC05CB71E6AB99200EBB554 /* sample-2.mp3 */,
 				EFC05CB31E6AAD9600EBB554 /* samle-3.mp3 */,
 			);
 			path = watanabe;
@@ -229,12 +230,13 @@
 			files = (
 				95AD42651E6AAC6A00865CAD /* ResultViewController.xib in Resources */,
 				9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */,
-				EFC05CB11E6AAB8B00EBB554 /* sample-1.mp3 in Resources */,
+				EFC05CB81E6AB99200EBB554 /* sample-1.mp3 in Resources */,
+				EFC05CB91E6AB99200EBB554 /* sample-2.mp3 in Resources */,
 				EFC05CB41E6AAD9600EBB554 /* samle-3.mp3 in Resources */,
 				9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */,
 				951054791E6A517600A25B8F /* Main.storyboard in Resources */,
-				EFC05CB21E6AAB8B00EBB554 /* sample-2.mp3 in Resources */,
 				49413D6C1E6AA31300AEEA2B /* BowlsViewController.xib in Resources */,
+				EFC05CBA1E6AB9D100EBB554 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
