@@ -45,5 +45,4 @@ class AudioEngineMock: AudioEngine {
             print(#function, newValue)
         }
     }
-    
 }
