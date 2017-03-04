@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    
     @IBOutlet weak var domainTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -30,10 +31,15 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func push(_ sender: UIButton) {
+        self.present(BowlsViewController(), animated: true, completion: nil)
+    }
+    
     override func viewWillLayoutSubviews() {
         
         super.viewWillLayoutSubviews()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
