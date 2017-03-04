@@ -28,6 +28,7 @@
 		EFC05CAE1E6AAB8500EBB554 /* SuperBowlAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC05CAD1E6AAB8500EBB554 /* SuperBowlAudioEngine.swift */; };
 		EFC05CB11E6AAB8B00EBB554 /* sample-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFC05CAF1E6AAB8B00EBB554 /* sample-1.mp3 */; };
 		EFC05CB21E6AAB8B00EBB554 /* sample-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFC05CB01E6AAB8B00EBB554 /* sample-2.mp3 */; };
+		EFC05CB41E6AAD9600EBB554 /* samle-3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFC05CB31E6AAD9600EBB554 /* samle-3.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		EFC05CAD1E6AAB8500EBB554 /* SuperBowlAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperBowlAudioEngine.swift; sourceTree = "<group>"; };
 		EFC05CAF1E6AAB8B00EBB554 /* sample-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-1.mp3"; sourceTree = "<group>"; };
 		EFC05CB01E6AAB8B00EBB554 /* sample-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-2.mp3"; sourceTree = "<group>"; };
+		EFC05CB31E6AAD9600EBB554 /* samle-3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "samle-3.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				EFC05CAD1E6AAB8500EBB554 /* SuperBowlAudioEngine.swift */,
 				EFC05CAF1E6AAB8B00EBB554 /* sample-1.mp3 */,
 				EFC05CB01E6AAB8B00EBB554 /* sample-2.mp3 */,
+				EFC05CB31E6AAD9600EBB554 /* samle-3.mp3 */,
 			);
 			path = watanabe;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				95AD42651E6AAC6A00865CAD /* ResultViewController.xib in Resources */,
 				9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */,
 				EFC05CB11E6AAB8B00EBB554 /* sample-1.mp3 in Resources */,
+				EFC05CB41E6AAD9600EBB554 /* samle-3.mp3 in Resources */,
 				9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */,
 				951054791E6A517600A25B8F /* Main.storyboard in Resources */,
 				EFC05CB21E6AAB8B00EBB554 /* sample-2.mp3 in Resources */,
