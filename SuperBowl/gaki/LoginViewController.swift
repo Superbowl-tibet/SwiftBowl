@@ -32,7 +32,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func push(_ sender: UIButton) {
-        self.present(BowlsViewController(), animated: true, completion: nil)
+        let viewcontroller = BowlsViewController()
+        viewcontroller.userName = nameTextField.text
+        self.present(viewcontroller, animated: true, completion: nil)
     }
     
     override func viewWillLayoutSubviews() {
