@@ -9,18 +9,27 @@
 import Foundation
 import AVFoundation
 
+enum Sound: String {
+    case synth = "sample-1"
+    case wave = "sample-2"
+//    case drum = "sample-3"
+}
+
 class SuperBowlAudioEngine: AudioEngine {
     
     private lazy var player: AVAudioPlayer = {
-        let url = Bundle.main.url(forResource: "sample", withExtension: "wav")
+        let fileName = self.sound.rawValue
+        let url = Bundle.main.url(forResource: fileName, withExtension: "mp3")
         let player = try! AVAudioPlayer.init(contentsOf: url!)
+        player.prepareToPlay()
         player.numberOfLoops = -1
-        return player
+        return player 
     }()
     
     func play() {
         self.player.play()
     }
+    
     func stop() {
         self.player.stop()
     }
@@ -35,13 +44,6 @@ class SuperBowlAudioEngine: AudioEngine {
     }
     
     // 端末のパートを表現する数値 (0..n)
-    var channel: Int {
-        get {
-            return 0
-        }
-        set {
-            
-        }
-    }
-
+    var channel: Int = 0
+    var sound: Sound = .wave
 }
