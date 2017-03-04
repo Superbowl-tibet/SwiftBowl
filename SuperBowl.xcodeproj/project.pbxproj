@@ -7,19 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49413D091E6A61C500AEEA2B /* ShiningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413D081E6A61C500AEEA2B /* ShiningView.swift */; };
+		49413D511E6AA2EE00AEEA2B /* ShiningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413D501E6AA2EE00AEEA2B /* ShiningView.swift */; };
+		49413D531E6AA30600AEEA2B /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413D521E6AA30600AEEA2B /* AudioEngine.swift */; };
+		49413D6B1E6AA31300AEEA2B /* BowlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413D551E6AA31300AEEA2B /* BowlsViewController.swift */; };
+		49413D6C1E6AA31300AEEA2B /* BowlsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49413D561E6AA31300AEEA2B /* BowlsViewController.xib */; };
+		49413D6D1E6AA31300AEEA2B /* CGRect+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413D571E6AA31300AEEA2B /* CGRect+Circle.swift */; };
+		49413D6E1E6AA31300AEEA2B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413D581E6AA31300AEEA2B /* CircleView.swift */; };
+		49413D6F1E6AA31300AEEA2B /* JustCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413D591E6AA31300AEEA2B /* JustCircleView.swift */; };
 		5695B732A9DF90B04AB48053 /* Pods_SuperBowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3D2B03063E5272F1600551 /* Pods_SuperBowl.framework */; };
 		951054741E6A517600A25B8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951054731E6A517600A25B8F /* AppDelegate.swift */; };
 		951054761E6A517600A25B8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951054751E6A517600A25B8F /* ViewController.swift */; };
 		951054791E6A517600A25B8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951054771E6A517600A25B8F /* Main.storyboard */; };
 		9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9510547A1E6A517600A25B8F /* Assets.xcassets */; };
 		9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9510547C1E6A517600A25B8F /* LaunchScreen.storyboard */; };
-		EF4E3AAA1E6A5F25000AA2E7 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */; };
+		95AD425B1E6A8AE400865CAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD42591E6A8AE400865CAD /* LoginViewController.swift */; };
+		95AD425C1E6A8AE400865CAD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AD425A1E6A8AE400865CAD /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F3D2B03063E5272F1600551 /* Pods_SuperBowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperBowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49413D081E6A61C500AEEA2B /* ShiningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiningView.swift; sourceTree = "<group>"; };
+		49413D501E6AA2EE00AEEA2B /* ShiningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiningView.swift; sourceTree = "<group>"; };
+		49413D521E6AA30600AEEA2B /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		49413D551E6AA31300AEEA2B /* BowlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BowlsViewController.swift; sourceTree = "<group>"; };
+		49413D561E6AA31300AEEA2B /* BowlsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BowlsViewController.xib; sourceTree = "<group>"; };
+		49413D571E6AA31300AEEA2B /* CGRect+Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Circle.swift"; sourceTree = "<group>"; };
+		49413D581E6AA31300AEEA2B /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		49413D591E6AA31300AEEA2B /* JustCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustCircleView.swift; sourceTree = "<group>"; };
 		4FA60CC2608BC158E4076BF0 /* Pods-SuperBowl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.debug.xcconfig"; sourceTree = "<group>"; };
 		951054701E6A517600A25B8F /* SuperBowl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperBowl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951054731E6A517600A25B8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,8 +41,9 @@
 		9510547A1E6A517600A25B8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9510547D1E6A517600A25B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9510547F1E6A517600A25B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95AD42591E6A8AE400865CAD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = SuperBowl/gaki/LoginViewController.swift; sourceTree = "<group>"; };
+		95AD425A1E6A8AE400865CAD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = SuperBowl/gaki/LoginViewController.xib; sourceTree = "<group>"; };
 		DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.release.xcconfig"; sourceTree = "<group>"; };
-		EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +61,21 @@
 		49413D071E6A611300AEEA2B /* ika */ = {
 			isa = PBXGroup;
 			children = (
-				49413D081E6A61C500AEEA2B /* ShiningView.swift */,
+				49413D501E6AA2EE00AEEA2B /* ShiningView.swift */,
 			);
 			path = ika;
+			sourceTree = "<group>";
+		};
+		49413D541E6AA31300AEEA2B /* watr */ = {
+			isa = PBXGroup;
+			children = (
+				49413D551E6AA31300AEEA2B /* BowlsViewController.swift */,
+				49413D561E6AA31300AEEA2B /* BowlsViewController.xib */,
+				49413D571E6AA31300AEEA2B /* CGRect+Circle.swift */,
+				49413D581E6AA31300AEEA2B /* CircleView.swift */,
+				49413D591E6AA31300AEEA2B /* JustCircleView.swift */,
+			);
+			path = watr;
 			sourceTree = "<group>";
 		};
 		62506B224AE2A93EE81BAD42 /* Pods */ = {
@@ -72,6 +98,8 @@
 		951054671E6A517500A25B8F = {
 			isa = PBXGroup;
 			children = (
+				95AD42591E6A8AE400865CAD /* LoginViewController.swift */,
+				95AD425A1E6A8AE400865CAD /* LoginViewController.xib */,
 				951054721E6A517600A25B8F /* SuperBowl */,
 				951054711E6A517600A25B8F /* Products */,
 				62506B224AE2A93EE81BAD42 /* Pods */,
@@ -90,6 +118,7 @@
 		951054721E6A517600A25B8F /* SuperBowl */ = {
 			isa = PBXGroup;
 			children = (
+				49413D541E6AA31300AEEA2B /* watr */,
 				951054731E6A517600A25B8F /* AppDelegate.swift */,
 				951054751E6A517600A25B8F /* ViewController.swift */,
 				951054771E6A517600A25B8F /* Main.storyboard */,
@@ -105,7 +134,7 @@
 		EF4E3AAB1E6A60C8000AA2E7 /* watanabe */ = {
 			isa = PBXGroup;
 			children = (
-				EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */,
+				49413D521E6AA30600AEEA2B /* AudioEngine.swift */,
 			);
 			path = watanabe;
 			sourceTree = "<group>";
@@ -145,7 +174,7 @@
 				TargetAttributes = {
 					9510546F1E6A517500A25B8F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = E8K7V8Y3M8;
+						DevelopmentTeam = T5S77M8KEE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -173,9 +202,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AD425C1E6A8AE400865CAD /* LoginViewController.xib in Resources */,
 				9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */,
 				9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */,
 				951054791E6A517600A25B8F /* Main.storyboard in Resources */,
+				49413D6C1E6AA31300AEEA2B /* BowlsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,10 +265,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4E3AAA1E6A5F25000AA2E7 /* AudioEngine.swift in Sources */,
+				49413D6E1E6AA31300AEEA2B /* CircleView.swift in Sources */,
 				951054761E6A517600A25B8F /* ViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
-				49413D091E6A61C500AEEA2B /* ShiningView.swift in Sources */,
+				49413D531E6AA30600AEEA2B /* AudioEngine.swift in Sources */,
+				49413D511E6AA2EE00AEEA2B /* ShiningView.swift in Sources */,
+				49413D6B1E6AA31300AEEA2B /* BowlsViewController.swift in Sources */,
+				49413D6F1E6AA31300AEEA2B /* JustCircleView.swift in Sources */,
+				95AD425B1E6A8AE400865CAD /* LoginViewController.swift in Sources */,
+				49413D6D1E6AA31300AEEA2B /* CGRect+Circle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +395,7 @@
 			baseConfigurationReference = 4FA60CC2608BC158E4076BF0 /* Pods-SuperBowl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E8K7V8Y3M8;
+				DEVELOPMENT_TEAM = T5S77M8KEE;
 				INFOPLIST_FILE = SuperBowl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmizogaki.SuperBowl;
@@ -373,7 +409,7 @@
 			baseConfigurationReference = DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E8K7V8Y3M8;
+				DEVELOPMENT_TEAM = T5S77M8KEE;
 				INFOPLIST_FILE = SuperBowl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmizogaki.SuperBowl;
