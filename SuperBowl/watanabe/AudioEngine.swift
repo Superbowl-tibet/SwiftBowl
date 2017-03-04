@@ -18,7 +18,7 @@ protocol AudioEngine: class {
     var speed: Float { get set }
     
     // 端末のパートを表現する数値 (0..n)
-    var channel: Int { get set }
+    var sound: Sound { get set }
     
 }
 
@@ -36,10 +36,10 @@ class AudioEngineMock: AudioEngine {
             print(#function, newValue)
         }
     }
-    var channel: Int {
+    var sound: Sound {
         get {
             print(#function)
-            return 0
+            return .part1
         }
         set {
             print(#function, newValue)
