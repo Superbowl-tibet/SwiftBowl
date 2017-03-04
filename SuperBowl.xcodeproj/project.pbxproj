@@ -14,6 +14,8 @@
 		951054791E6A517600A25B8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951054771E6A517600A25B8F /* Main.storyboard */; };
 		9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9510547A1E6A517600A25B8F /* Assets.xcassets */; };
 		9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9510547C1E6A517600A25B8F /* LaunchScreen.storyboard */; };
+		95AD425B1E6A8AE400865CAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD42591E6A8AE400865CAD /* LoginViewController.swift */; };
+		95AD425C1E6A8AE400865CAD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AD425A1E6A8AE400865CAD /* LoginViewController.xib */; };
 		EF4E3AAA1E6A5F25000AA2E7 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		9510547A1E6A517600A25B8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9510547D1E6A517600A25B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9510547F1E6A517600A25B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95AD42591E6A8AE400865CAD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = SuperBowl/gaki/LoginViewController.swift; sourceTree = "<group>"; };
+		95AD425A1E6A8AE400865CAD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = SuperBowl/gaki/LoginViewController.xib; sourceTree = "<group>"; };
 		DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.release.xcconfig"; sourceTree = "<group>"; };
 		EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,8 @@
 		951054671E6A517500A25B8F = {
 			isa = PBXGroup;
 			children = (
+				95AD42591E6A8AE400865CAD /* LoginViewController.swift */,
+				95AD425A1E6A8AE400865CAD /* LoginViewController.xib */,
 				951054721E6A517600A25B8F /* SuperBowl */,
 				951054711E6A517600A25B8F /* Products */,
 				62506B224AE2A93EE81BAD42 /* Pods */,
@@ -173,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AD425C1E6A8AE400865CAD /* LoginViewController.xib in Resources */,
 				9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */,
 				9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */,
 				951054791E6A517600A25B8F /* Main.storyboard in Resources */,
@@ -237,6 +244,7 @@
 				EF4E3AAA1E6A5F25000AA2E7 /* AudioEngine.swift in Sources */,
 				951054761E6A517600A25B8F /* ViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
+				95AD425B1E6A8AE400865CAD /* LoginViewController.swift in Sources */,
 				49413D091E6A61C500AEEA2B /* ShiningView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
