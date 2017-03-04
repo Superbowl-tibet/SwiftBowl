@@ -32,7 +32,19 @@ class CircleView: UIView {
                                      y: (sin(radian) * radius))
         return cursorLocation
     }
+    
+    var goodDownValue: Double = 0.0
 
+    public func downGood() {
+        self.good -= self.goodDownValue
+    }
+    
+    var goodUpValue: Double = 0.0001
+    
+    public func upGood() {
+        self.good += self.goodUpValue
+    }
+    
     var good: Double = 0.0 // 0.0-1.0
         {
         didSet {
@@ -180,7 +192,7 @@ class InteractiveCircleView: CircleView {
         
         #if true
             do {
-                let up:Double = 0.001
+                let up:Double = 0.00001//update
                 self.good += up
                 print(self.good)
             }
