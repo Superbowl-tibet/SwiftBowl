@@ -20,7 +20,7 @@ protocol InteractiveCircleViewDelegate {
 class CircleView: UIView {
     var filledBackgroundColor: UIColor?
     
-    var stokeColor: UIColor = UIColor.gray
+    var stokeColor: UIColor = UIColor.lightGray
     
     func locationFromCircleCenter(from location: CGPoint) -> CGPoint {
         let locationX: CGFloat = location.x - self.circleFrame.midX
