@@ -13,6 +13,7 @@
 		951054791E6A517600A25B8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951054771E6A517600A25B8F /* Main.storyboard */; };
 		9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9510547A1E6A517600A25B8F /* Assets.xcassets */; };
 		9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9510547C1E6A517600A25B8F /* LaunchScreen.storyboard */; };
+		EF4E3AAA1E6A5F25000AA2E7 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9510547D1E6A517600A25B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9510547F1E6A517600A25B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.release.xcconfig"; sourceTree = "<group>"; };
+		EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +85,18 @@
 				951054771E6A517600A25B8F /* Main.storyboard */,
 				9510547A1E6A517600A25B8F /* Assets.xcassets */,
 				9510547C1E6A517600A25B8F /* LaunchScreen.storyboard */,
+				EF4E3AAB1E6A60C8000AA2E7 /* watanabe */,
 				9510547F1E6A517600A25B8F /* Info.plist */,
 			);
 			path = SuperBowl;
+			sourceTree = "<group>";
+		};
+		EF4E3AAB1E6A60C8000AA2E7 /* watanabe */ = {
+			isa = PBXGroup;
+			children = (
+				EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */,
+			);
+			path = watanabe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +213,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4E3AAA1E6A5F25000AA2E7 /* AudioEngine.swift in Sources */,
 				951054761E6A517600A25B8F /* ViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
 			);
@@ -377,6 +389,7 @@
 				951054841E6A517600A25B8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
