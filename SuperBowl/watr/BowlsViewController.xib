@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BowlsViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BowlsViewController" customModule="CircleView" customModuleProvider="target">
             <connections>
+                <outlet property="centerCircleView" destination="1zH-Q3-95e" id="NFZ-HE-Ctc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +20,35 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-Fa-RhR" customClass="CircleView" customModule="CircleView" customModuleProvider="target">
+                    <rect key="frame" x="20" y="166" width="335" height="335"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Rtu-Fa-RhR" secondAttribute="height" multiplier="1:1" id="Ntg-sg-2xj"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zH-Q3-95e" customClass="CircleView" customModule="CircleView" customModuleProvider="target">
+                    <rect key="frame" x="147" y="293" width="80" height="80"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Lmw-L4-DKb"/>
+                        <constraint firstAttribute="height" constant="80" id="nGE-WV-rAb"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1zH-Q3-95e" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6J1-ur-FcE"/>
+                <constraint firstItem="Rtu-Fa-RhR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8cW-WS-nyI"/>
+                <constraint firstItem="1zH-Q3-95e" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DfR-IS-2zo"/>
+                <constraint firstItem="Rtu-Fa-RhR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QMY-7E-GcH"/>
+                <constraint firstAttribute="trailing" secondItem="Rtu-Fa-RhR" secondAttribute="trailing" constant="20" symbolic="YES" id="TCe-09-69a"/>
+                <constraint firstAttribute="trailing" secondItem="Rtu-Fa-RhR" secondAttribute="trailing" constant="20" symbolic="YES" id="c0S-g5-vCj"/>
+                <constraint firstItem="Rtu-Fa-RhR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="eeI-Vc-vgc"/>
+                <constraint firstItem="Rtu-Fa-RhR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="u2f-X8-gi9"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="143.5"/>
         </view>
     </objects>
 </document>

@@ -9,9 +9,21 @@
 import UIKit
 
 class BowlsViewController: UIViewController {
+    @IBOutlet var centerCircleView: CircleView!
 
+    override func loadView() {
+        if let view = UINib(nibName: "BowlsViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
+            self.view = view
+        }
+    }
+    
+    var centerCircleColor: UIColor = UIColor.cyan
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.centerCircleView.filledBackgroundColor = centerCircleColor
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "XXX Group")!)
 
         // Do any additional setup after loading the view.
     }

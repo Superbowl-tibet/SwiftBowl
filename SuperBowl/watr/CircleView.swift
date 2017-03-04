@@ -18,6 +18,8 @@ protocol InteractiveCircleViewDelegate {
 }
 
 class CircleView: UIView {
+    var filledBackgroundColor: UIColor?
+    
     var stokeColor: UIColor = UIColor.green
     
     func locationFromCircleCenter(from location: CGPoint) -> CGPoint {
@@ -100,20 +102,31 @@ class CircleView: UIView {
             context.restoreGState()
         }
         
-        #if true
-            do { // for demo
-                context.saveGState()
-                context.addEllipse(in: self.circleFrame.insetBy(dx: self.lineWidth,
-                                                                dy: self.lineWidth))
-                
-                let fillColor = self.color(good: self.good).cgColor
-                context.addEllipse(in: self.circleFrame)
-                context.setFillColor(fillColor)
-                context.fillPath()
-                
-                context.restoreGState()
-            }
-        #endif
+        if let circleFillColor = self.filledBackgroundColor?.cgColor {
+            context.saveGState()
+            context.addEllipse(in: self.circleFrame.insetBy(dx: self.lineWidth,
+                                                            dy: self.lineWidth))
+            
+            let fillColor = circleFillColor
+            context.addEllipse(in: self.circleFrame)
+            context.setFillColor(fillColor)
+            context.fillPath()
+            
+            context.restoreGState()
+        }
+        
+        do {
+            context.saveGState()
+            context.addEllipse(in: self.circleFrame.insetBy(dx: self.lineWidth,
+                                                            dy: self.lineWidth))
+            
+            let fillColor = self.color(good: self.good).cgColor
+            context.addEllipse(in: self.circleFrame)
+            context.setFillColor(fillColor)
+            context.fillPath()
+            
+            context.restoreGState()
+        }
         
         context.saveGState()
         
