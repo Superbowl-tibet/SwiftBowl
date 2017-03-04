@@ -32,11 +32,19 @@ class CircleView: UIView {
                                      y: (sin(radian) * radius))
         return cursorLocation
     }
+
+    var hasTouch: Bool = false
+        {
+        didSet {
+            print("has touch? \(self.hasTouch)")
+        }
+    }
     
-    var goodDownValue: Double = 0.0
+    var goodDownValue: Double = 0.025
 
     public func downGood() {
         self.good -= self.goodDownValue
+        print("down \(self.good)")
     }
     
     var goodUpValue: Double = 0.01
@@ -48,6 +56,7 @@ class CircleView: UIView {
     var good: Double = 0.0 // 0.0-1.0
         {
         didSet {
+            self.good = self.parameter
             self.setNeedsDisplay()
         }
     }
@@ -199,6 +208,7 @@ class InteractiveCircleView: CircleView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        self.hasTouch = true
         
         guard let touch = touches.first else {
             return
@@ -210,12 +220,26 @@ class InteractiveCircleView: CircleView {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
+        self.hasTouch = true
+        
         guard let touch = touches.first else {
             return
         }
         
         let location = touch.location(in: self)
         self.trackUserInteraction(at: location)
+        
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        self.hasTouch = false
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        
+        self.hasTouch = false
     }
 }
 
