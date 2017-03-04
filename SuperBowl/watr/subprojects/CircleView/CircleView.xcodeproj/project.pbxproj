@@ -15,6 +15,8 @@
 		2F98C0B01E6A5FBB00005B38 /* CircleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98C0AF1E6A5FBB00005B38 /* CircleViewTests.swift */; };
 		2FEC20731E6A845A0064B743 /* CGRect+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC20711E6A845A0064B743 /* CGRect+Circle.swift */; };
 		2FEC20741E6A845A0064B743 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC20721E6A845A0064B743 /* CircleView.swift */; };
+		2FEC20781E6A88AA0064B743 /* BowlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC20761E6A88AA0064B743 /* BowlsViewController.swift */; };
+		2FEC20791E6A88AA0064B743 /* BowlsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FEC20771E6A88AA0064B743 /* BowlsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		2F98C0B11E6A5FBB00005B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FEC20711E6A845A0064B743 /* CGRect+Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+Circle.swift"; path = "../../../CGRect+Circle.swift"; sourceTree = "<group>"; };
 		2FEC20721E6A845A0064B743 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = ../../../CircleView.swift; sourceTree = "<group>"; };
+		2FEC20761E6A88AA0064B743 /* BowlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BowlsViewController.swift; path = ../../../BowlsViewController.swift; sourceTree = "<group>"; };
+		2FEC20771E6A88AA0064B743 /* BowlsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BowlsViewController.xib; path = ../../../BowlsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			children = (
 				2FEC20711E6A845A0064B743 /* CGRect+Circle.swift */,
 				2FEC20721E6A845A0064B743 /* CircleView.swift */,
+				2FEC20761E6A88AA0064B743 /* BowlsViewController.swift */,
+				2FEC20771E6A88AA0064B743 /* BowlsViewController.xib */,
 			);
 			name = CircleView;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			files = (
 				2F98C0A51E6A5FBB00005B38 /* LaunchScreen.storyboard in Resources */,
 				2F98C0A21E6A5FBB00005B38 /* Assets.xcassets in Resources */,
+				2FEC20791E6A88AA0064B743 /* BowlsViewController.xib in Resources */,
 				2F98C0A01E6A5FBB00005B38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +224,7 @@
 			files = (
 				2FEC20741E6A845A0064B743 /* CircleView.swift in Sources */,
 				2F98C09D1E6A5FBB00005B38 /* ViewController.swift in Sources */,
+				2FEC20781E6A88AA0064B743 /* BowlsViewController.swift in Sources */,
 				2F98C09B1E6A5FBB00005B38 /* AppDelegate.swift in Sources */,
 				2FEC20731E6A845A0064B743 /* CGRect+Circle.swift in Sources */,
 			);

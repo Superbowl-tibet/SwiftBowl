@@ -21,9 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzy-u9-zkR" customClass="CircleView" customModule="CircleView" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzy-u9-zkR" customClass="InteractiveCircleView" customModule="CircleView" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="335" height="627"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-A3-AYH" customClass="CircleView" customModule="CircleView" customModuleProvider="target">
+                                        <rect key="frame" x="47" y="184" width="240" height="240"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="Vdb-JA-zTA"/>
+                                            <constraint firstAttribute="width" constant="240" id="jr9-6R-Cuf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dRr-A3-AYH" firstAttribute="centerX" secondItem="Gzy-u9-zkR" secondAttribute="centerX" id="3dY-0F-uYi"/>
+                                    <constraint firstItem="dRr-A3-AYH" firstAttribute="centerY" secondItem="Gzy-u9-zkR" secondAttribute="centerY" id="i2V-ho-ScR"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,6 +49,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="anotherCircleView" destination="dRr-A3-AYH" id="TNl-w3-Ecj"/>
                         <outlet property="circleView" destination="Gzy-u9-zkR" id="6c2-qR-1dH"/>
                     </connections>
                 </viewController>
