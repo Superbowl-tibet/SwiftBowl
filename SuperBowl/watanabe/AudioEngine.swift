@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AudioEngine {
+protocol AudioEngine: class {
     
     // 起動後テキトーに呼んでください。重複呼び出しがなければ良いです。
     func play()
@@ -24,10 +24,26 @@ protocol AudioEngine {
 
 class AudioEngineMock: AudioEngine {
     
-    func play() { }
-    func stop() { }
+    func play() { print(#function) }
+    func stop() { print(#function) }
     
-    var speed: Float = 0
-    var channel: Int = 0
+    var speed: Float {
+        get {
+            print(#function)
+            return 0
+        }
+        set {
+            print(#function, newValue)
+        }
+    }
+    var channel: Int {
+        get {
+            print(#function)
+            return 0
+        }
+        set {
+            print(#function, newValue)
+        }
+    }
     
 }
