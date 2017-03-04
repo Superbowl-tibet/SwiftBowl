@@ -27,6 +27,11 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         return cursor
     }()
     
+    func updateAudioParameter(with circleView: CircleView) {
+        let parameter: Double =  circleView.parameter
+        print(parameter)//ここ
+        self.audio?.speed = Float(parameter)
+    }
     
     internal func circleSpeedDidUpdate(circleView: CircleView,
                                        didUpdate speed: Double,
@@ -39,9 +44,7 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
             }
             self.cursor.center = circleView.cursorLocationWith(tapped: currentLocation)
             
-            let parameter: Double =  circleView.parameter
-            print(parameter)//ここ
-            self.audio?.speed = Float(parameter)
+            self.updateAudioParameter(with: circleView)
         }
         
         do {
@@ -71,11 +74,19 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         if self.audio == nil {
             self.audio = {
-                let engine = AudioEngineMock()
+                let engine = SuperBowlAudioEngine()
                 engine.speed = 0.0
+                engine.sound = .part1
                 return engine
             } ()
             self.audio?.play()
+            
+            Timer.scheduledTimer(withTimeInterval: 0.1,
+                                 repeats: true
+                , block: { (timer) in
+                    self.circleView.downGood()
+                    self.updateAudioParameter(with: self.circleView)
+            })
         }
     }
     
