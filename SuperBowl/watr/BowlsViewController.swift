@@ -15,7 +15,7 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         let cursor: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0,
                                                   width: 40.0, height: 40.0))
         cursor.layer.cornerRadius = (cursor.bounds.width / 2.0)
-        cursor.backgroundColor = UIColor.blue
+        cursor.backgroundColor = #colorLiteral(red: 0.7411764706, green: 0.05882352941, blue: 0.8823529412, alpha: 1)
         return cursor
     }()
     
@@ -23,7 +23,8 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         let cursor: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0,
                                                   width: 40.0, height: 40.0))
         cursor.layer.cornerRadius = (cursor.bounds.width / 2.0)
-        cursor.backgroundColor = UIColor.green
+        cursor.backgroundColor = #colorLiteral(red: 0.4941176471, green: 0.8274509804, blue: 0.1294117647, alpha: 1)
+
         return cursor
     }()
     
@@ -79,7 +80,7 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         }
     }
     
-    var centerCircleColor: UIColor = UIColor.cyan
+    var centerCircleColor: UIColor = #colorLiteral(red: 0.2862745098, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
