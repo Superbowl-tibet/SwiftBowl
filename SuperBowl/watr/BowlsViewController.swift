@@ -90,8 +90,6 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         self.centerCircleView.isOpaque = false
         self.centerCircleView.color = centerCircleColor
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "XXX Group")!)
-
         self.circleView.delegate = self        
     }
 }
