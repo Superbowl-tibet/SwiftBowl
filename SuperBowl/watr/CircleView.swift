@@ -190,14 +190,6 @@ class InteractiveCircleView: CircleView {
     private func trackUserInteraction(at location: CGPoint) {
         print(location)
         
-        #if true
-            do {
-                let up:Double = 0.00001//update
-                self.good += up
-                print(self.good)
-            }
-        #endif
-        
         self.delegate?.circleSpeedDidUpdate(circleView: self,
                                             didUpdate: 0,
                                             currentLocation: location)

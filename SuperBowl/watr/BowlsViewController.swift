@@ -44,6 +44,7 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
             }
             self.cursor.center = circleView.cursorLocationWith(tapped: currentLocation)
             
+            circleView.upGood()
             self.updateAudioParameter(with: circleView)
         }
         
