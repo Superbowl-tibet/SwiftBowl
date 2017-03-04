@@ -70,7 +70,7 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
             self.view = view
         }
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         if self.audio == nil {
             self.audio = {
@@ -84,8 +84,10 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
             Timer.scheduledTimer(withTimeInterval: 0.1,
                                  repeats: true
                 , block: { (timer) in
-                    self.circleView.downGood()
-                    self.updateAudioParameter(with: self.circleView)
+                    if !self.circleView.hasTouch {
+                        self.circleView.downGood()
+                        self.updateAudioParameter(with: self.circleView)
+                    }
             })
         }
         
