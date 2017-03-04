@@ -10,6 +10,7 @@ import UIKit
 
 class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
     private var audio: AudioEngine?
+    var userName: String? = nil
     
     let cursor: UIView = {
         let cursor: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0,
@@ -74,9 +75,17 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         if self.audio == nil {
             self.audio = {
+                let userName = self.userName ?? ""
                 let engine = SuperBowlAudioEngine()
+                
+                if (userName.characters.count % 2) == 0 {
+                    engine.sound = .part1
+                }
+                else {
+                    engine.sound = .part2
+                }
                 engine.speed = 0.0
-                engine.sound = .part1
+
                 return engine
             } ()
             self.audio?.play()
