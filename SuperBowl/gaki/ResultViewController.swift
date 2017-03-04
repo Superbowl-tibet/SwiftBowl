@@ -16,11 +16,13 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
-    
+}
 
-
+extension UIViewController {
+    @IBAction func dismiss(sender: AnyObject!) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
