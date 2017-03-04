@@ -10,9 +10,9 @@ import Foundation
 import AVFoundation
 
 enum Sound: String {
-    case synth = "sample-1"
-    case wave = "sample-2"
-//    case drum = "sample-3"
+    case part1 = "sample-1"
+    case part2 = "sample-2"
+    case part3 = "sample-3"
 }
 
 class SuperBowlAudioEngine: AudioEngine {
@@ -44,6 +44,5 @@ class SuperBowlAudioEngine: AudioEngine {
     }
     
     // 端末のパートを表現する数値 (0..n)
-    var channel: Int = 0
-    var sound: Sound = .wave
+    var sound: Sound = .part1
 }
