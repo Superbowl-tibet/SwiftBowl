@@ -15,7 +15,7 @@ class SuperBowlAudioEngine: AudioEngine {
         let url = Bundle.main.url(forResource: "sample", withExtension: "wav")
         let player = try! AVAudioPlayer.init(contentsOf: url!)
         player.numberOfLoops = -1
-        return player
+        return player 
     }()
     
     func play() {

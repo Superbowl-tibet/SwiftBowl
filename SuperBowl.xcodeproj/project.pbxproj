@@ -16,6 +16,7 @@
 		9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9510547C1E6A517600A25B8F /* LaunchScreen.storyboard */; };
 		EF4E3AAA1E6A5F25000AA2E7 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */; };
 		EF94B9221E6A8916000F49FD /* SuperBowlAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF94B9211E6A8916000F49FD /* SuperBowlAudioEngine.swift */; };
+		EF94B9261E6A8F00000F49FD /* sample.wav in Resources */ = {isa = PBXBuildFile; fileRef = EF94B9251E6A8F00000F49FD /* sample.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.release.xcconfig"; sourceTree = "<group>"; };
 		EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		EF94B9211E6A8916000F49FD /* SuperBowlAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperBowlAudioEngine.swift; sourceTree = "<group>"; };
+		EF94B9251E6A8F00000F49FD /* sample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				EF4E3AA91E6A5F25000AA2E7 /* AudioEngine.swift */,
 				EF94B9211E6A8916000F49FD /* SuperBowlAudioEngine.swift */,
+				EF94B9251E6A8F00000F49FD /* sample.wav */,
 			);
 			path = watanabe;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF94B9261E6A8F00000F49FD /* sample.wav in Resources */,
 				9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */,
 				9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */,
 				951054791E6A517600A25B8F /* Main.storyboard in Resources */,
