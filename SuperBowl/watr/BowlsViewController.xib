@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BowlsViewController" customModule="CircleView" customModuleProvider="target">
             <connections>
+                <outlet property="anotherCircleView" destination="Ct2-Hx-Cgj" id="R5y-wC-DIu"/>
                 <outlet property="backgroundCircleView" destination="Rtu-Fa-RhR" id="KMa-KK-lVV"/>
                 <outlet property="centerCircleView" destination="1zH-Q3-95e" id="svv-Nm-cUM"/>
+                <outlet property="circleView" destination="tFJ-U7-5UQ" id="7Yb-cF-fe4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,17 +28,24 @@
                     <rect key="frame" x="20" y="166" width="335" height="335"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFJ-U7-5UQ" customClass="InteractiveCircleView" customModule="CircleView" customModuleProvider="target">
-                            <rect key="frame" x="20" y="20" width="295" height="295"/>
+                            <rect key="frame" x="30" y="30" width="275" height="275"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="tFJ-U7-5UQ" firstAttribute="leading" secondItem="Rtu-Fa-RhR" secondAttribute="leading" constant="30" id="K3e-mp-DYw"/>
+                        <constraint firstAttribute="width" secondItem="Rtu-Fa-RhR" secondAttribute="height" multiplier="1:1" id="Ntg-sg-2xj"/>
+                        <constraint firstItem="tFJ-U7-5UQ" firstAttribute="top" secondItem="Rtu-Fa-RhR" secondAttribute="top" constant="30" id="Sf0-zc-rZs"/>
+                        <constraint firstAttribute="trailing" secondItem="tFJ-U7-5UQ" secondAttribute="trailing" constant="30" id="fa0-dA-A6A"/>
+                        <constraint firstAttribute="bottom" secondItem="tFJ-U7-5UQ" secondAttribute="bottom" constant="30" id="oS0-C6-Q1w"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ct2-Hx-Cgj" customClass="CircleView" customModule="CircleView" customModuleProvider="target">
+                    <rect key="frame" x="120" y="243" width="180" height="180"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="tFJ-U7-5UQ" firstAttribute="leading" secondItem="Rtu-Fa-RhR" secondAttribute="leading" constant="20" id="K3e-mp-DYw"/>
-                        <constraint firstAttribute="width" secondItem="Rtu-Fa-RhR" secondAttribute="height" multiplier="1:1" id="Ntg-sg-2xj"/>
-                        <constraint firstItem="tFJ-U7-5UQ" firstAttribute="top" secondItem="Rtu-Fa-RhR" secondAttribute="top" constant="20" id="Sf0-zc-rZs"/>
-                        <constraint firstAttribute="trailing" secondItem="tFJ-U7-5UQ" secondAttribute="trailing" constant="20" id="fa0-dA-A6A"/>
-                        <constraint firstAttribute="bottom" secondItem="tFJ-U7-5UQ" secondAttribute="bottom" constant="20" id="oS0-C6-Q1w"/>
+                        <constraint firstAttribute="width" constant="180" id="ahe-WE-6Ma"/>
+                        <constraint firstAttribute="height" constant="180" id="yrI-zO-SZ0"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zH-Q3-95e" customClass="JustCircleView" customModule="CircleView" customModuleProvider="target">
@@ -51,11 +60,13 @@
             <constraints>
                 <constraint firstItem="1zH-Q3-95e" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6J1-ur-FcE"/>
                 <constraint firstItem="Rtu-Fa-RhR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8cW-WS-nyI"/>
+                <constraint firstItem="Ct2-Hx-Cgj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Cbm-fm-37V"/>
                 <constraint firstItem="1zH-Q3-95e" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DfR-IS-2zo"/>
                 <constraint firstItem="Rtu-Fa-RhR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QMY-7E-GcH"/>
                 <constraint firstAttribute="trailing" secondItem="Rtu-Fa-RhR" secondAttribute="trailing" constant="20" symbolic="YES" id="TCe-09-69a"/>
                 <constraint firstAttribute="trailing" secondItem="Rtu-Fa-RhR" secondAttribute="trailing" constant="20" symbolic="YES" id="c0S-g5-vCj"/>
                 <constraint firstItem="Rtu-Fa-RhR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="eeI-Vc-vgc"/>
+                <constraint firstItem="Ct2-Hx-Cgj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="22.5" id="svB-s7-nWh"/>
                 <constraint firstItem="Rtu-Fa-RhR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="u2f-X8-gi9"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="143.5"/>

@@ -8,9 +8,55 @@
 
 import UIKit
 
-class BowlsViewController: UIViewController {
-    @IBOutlet var centerCircleView: JustCircleView!
+class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
+    let cursor: UIView = {
+        let cursor: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0,
+                                                  width: 40.0, height: 40.0))
+        cursor.layer.cornerRadius = (cursor.bounds.width / 2.0)
+        cursor.backgroundColor = UIColor.blue
+        return cursor
+    }()
+    
+    let anotherCursor: UIView = {
+        let cursor: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0,
+                                                  width: 40.0, height: 40.0))
+        cursor.layer.cornerRadius = (cursor.bounds.width / 2.0)
+        cursor.backgroundColor = UIColor.green
+        return cursor
+    }()
+    
+    
+    internal func circleSpeedDidUpdate(circleView: CircleView,
+                                       didUpdate speed: Double,
+                                       currentLocation: CGPoint)
+    {
+        do {
+            if self.cursor.superview != circleView {
+                self.cursor.removeFromSuperview()
+                circleView.addSubview(self.cursor)
+            }
+            self.cursor.center = circleView.cursorLocationWith(tapped: currentLocation)
+            
+            let parameter: Double =  circleView.parameter
+            print(parameter)//ここ
+        }
+        
+        do {
+            if self.anotherCursor.superview != self.anotherCircleView {
+                self.anotherCursor.removeFromSuperview()
+                self.anotherCircleView.addSubview(self.anotherCursor)
+            }
+            self.anotherCursor.center = self.anotherCircleView.circleFrame.cursorLocationFrom(degree: 120)
+            
+        }
+    }
+    
     @IBOutlet var backgroundCircleView: JustCircleView!
+    @IBOutlet var centerCircleView: JustCircleView!
+    
+    @IBOutlet var circleView: InteractiveCircleView!
+    @IBOutlet var anotherCircleView: CircleView!
+    
     
     override func loadView() {
         if let view = UINib(nibName: "BowlsViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
@@ -22,6 +68,8 @@ class BowlsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.backgroundCircleView.isOpaque = false
         self.backgroundCircleView.color = UIColor.white
         
         self.centerCircleView.isOpaque = false
@@ -29,23 +77,6 @@ class BowlsViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "XXX Group")!)
 
-        // Do any additional setup after loading the view.
+        self.circleView.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
