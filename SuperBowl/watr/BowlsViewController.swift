@@ -54,8 +54,6 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
                 self.anotherCursor.removeFromSuperview()
                 self.anotherCircleView.addSubview(self.anotherCursor)
             }
-            self.anotherCursor.center = self.anotherCircleView.circleFrame.cursorLocationFrom(degree: 120)
-            
         }
     }
     
@@ -88,6 +86,24 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
                 , block: { (timer) in
                     self.circleView.downGood()
                     self.updateAudioParameter(with: self.circleView)
+            })
+        }
+        
+        self.animateCursor()
+    }
+    
+    func animateCursor() {
+        
+        var i: CGFloat = 0.0
+        let interval: TimeInterval = 0.05
+        let duration = interval * 0.95
+        
+        // [CAUTION] invalidateしてないから漏れてると思う
+        Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { (_) in
+            UIView.animate(withDuration: duration, delay: 0.0, options: [], animations: {
+                self.anotherCursor.center = self.anotherCircleView.circleFrame.cursorLocationFrom(degree: i)
+                i += 1.0
+            }, completion: { (_) in
             })
         }
     }
