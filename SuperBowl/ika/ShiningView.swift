@@ -12,7 +12,7 @@ class ShiningView: UIView {
 
     private let radius : CGFloat = 20.0
     private let opacity : Float = 1.0
-    
+
     var shiningLevel : CGFloat = 0.0 {
         didSet {
             
