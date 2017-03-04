@@ -9,6 +9,8 @@
 import UIKit
 
 class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
+    private var audio: AudioEngine?
+    
     let cursor: UIView = {
         let cursor: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0,
                                                   width: 40.0, height: 40.0))
@@ -39,6 +41,7 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
             
             let parameter: Double =  circleView.parameter
             print(parameter)//ここ
+            self.audio?.speed = Float(parameter)
         }
         
         do {
@@ -51,6 +54,7 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         }
     }
     
+    
     @IBOutlet var backgroundCircleView: JustCircleView!
     @IBOutlet var centerCircleView: JustCircleView!
     
@@ -61,6 +65,17 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
     override func loadView() {
         if let view = UINib(nibName: "BowlsViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if self.audio == nil {
+            self.audio = {
+                let engine = AudioEngineMock()
+                engine.speed = 0.0
+                return engine
+            } ()
+            self.audio?.play()
         }
     }
     
@@ -77,6 +92,6 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "XXX Group")!)
 
-        self.circleView.delegate = self
+        self.circleView.delegate = self        
     }
 }
