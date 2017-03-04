@@ -12,7 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BowlsViewController" customModule="CircleView" customModuleProvider="target">
             <connections>
-                <outlet property="centerCircleView" destination="1zH-Q3-95e" id="NFZ-HE-Ctc"/>
+                <outlet property="backgroundCircleView" destination="Rtu-Fa-RhR" id="KMa-KK-lVV"/>
+                <outlet property="centerCircleView" destination="1zH-Q3-95e" id="svv-Nm-cUM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,16 +22,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-Fa-RhR" customClass="CircleView" customModule="CircleView" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-Fa-RhR" customClass="JustCircleView" customModule="CircleView" customModuleProvider="target">
                     <rect key="frame" x="20" y="166" width="335" height="335"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFJ-U7-5UQ" customClass="InteractiveCircleView" customModule="CircleView" customModuleProvider="target">
+                            <rect key="frame" x="20" y="20" width="295" height="295"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="tFJ-U7-5UQ" firstAttribute="leading" secondItem="Rtu-Fa-RhR" secondAttribute="leading" constant="20" id="K3e-mp-DYw"/>
                         <constraint firstAttribute="width" secondItem="Rtu-Fa-RhR" secondAttribute="height" multiplier="1:1" id="Ntg-sg-2xj"/>
+                        <constraint firstItem="tFJ-U7-5UQ" firstAttribute="top" secondItem="Rtu-Fa-RhR" secondAttribute="top" constant="20" id="Sf0-zc-rZs"/>
+                        <constraint firstAttribute="trailing" secondItem="tFJ-U7-5UQ" secondAttribute="trailing" constant="20" id="fa0-dA-A6A"/>
+                        <constraint firstAttribute="bottom" secondItem="tFJ-U7-5UQ" secondAttribute="bottom" constant="20" id="oS0-C6-Q1w"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zH-Q3-95e" customClass="CircleView" customModule="CircleView" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zH-Q3-95e" customClass="JustCircleView" customModule="CircleView" customModuleProvider="target">
                     <rect key="frame" x="147" y="293" width="80" height="80"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="Lmw-L4-DKb"/>
                         <constraint firstAttribute="height" constant="80" id="nGE-WV-rAb"/>
