@@ -94,20 +94,29 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         self.animateCursor()
     }
     
+    var dummyPlanetTimer: Timer?
+    
     func animateCursor() {
         
         var i: CGFloat = 0.0
         let interval: TimeInterval = 0.05
         let duration = interval * 0.95
         
-        // [CAUTION] invalidateしてないから漏れてると思う
-        Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { (_) in
+        self.dummyPlanetTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { (_) in
             UIView.animate(withDuration: duration, delay: 0.0, options: [], animations: {
                 self.anotherCursor.center = self.anotherCircleView.circleFrame.cursorLocationFrom(degree: i)
                 i += 1.0
             }, completion: { (_) in
             })
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        self.dummyPlanetTimer?.invalidate()
+        self.dummyPlanetTimer = nil
+        
+        super.viewDidDisappear(animated)
     }
     
     var centerCircleColor: UIColor = #colorLiteral(red: 0.2862745098, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
@@ -122,5 +131,17 @@ class BowlsViewController: UIViewController, InteractiveCircleViewDelegate {
         self.centerCircleView.color = centerCircleColor
         
         self.circleView.delegate = self        
+    }
+    
+    @IBAction func openResultView(sender: AnyObject!) {
+        
+        let resultViewController = ResultViewController(nibName: nil, bundle: nil)
+        resultViewController.modalTransitionStyle = .flipHorizontal
+        
+        self.present(resultViewController, animated: true, completion: nil)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

@@ -74,6 +74,16 @@
                         <constraint firstAttribute="height" priority="900" constant="72" id="MFF-JN-V2X"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agU-OJ-eQx">
+                    <rect key="frame" x="341" y="42.5" width="22" height="22"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="openResultViewWithSender:" destination="-1" eventType="touchUpInside" id="PQd-QE-hN7"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -83,7 +93,7 @@
                 <constraint firstItem="UqE-gZ-G7m" firstAttribute="top" secondItem="D8i-B5-BP8" secondAttribute="bottom" constant="16" id="7ey-BP-H6s"/>
                 <constraint firstItem="Rtu-Fa-RhR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8cW-WS-nyI"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UqE-gZ-G7m" secondAttribute="trailing" id="9N4-ai-85T"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wPU-tm-24X" secondAttribute="trailing" id="9sc-rP-doM"/>
+                <constraint firstAttribute="trailing" secondItem="agU-OJ-eQx" secondAttribute="trailing" constant="12" id="9bR-12-fP5"/>
                 <constraint firstAttribute="bottom" secondItem="UqE-gZ-G7m" secondAttribute="bottom" constant="8" id="ABc-la-SAe"/>
                 <constraint firstItem="Ct2-Hx-Cgj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Cbm-fm-37V"/>
                 <constraint firstItem="D8i-B5-BP8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ckd-xn-ah2"/>
@@ -93,10 +103,12 @@
                 <constraint firstItem="Rtu-Fa-RhR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QMY-7E-GcH"/>
                 <constraint firstItem="D8i-B5-BP8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tFJ-U7-5UQ" secondAttribute="bottom" constant="8" id="SE5-x0-kSn"/>
                 <constraint firstAttribute="trailing" secondItem="Rtu-Fa-RhR" secondAttribute="trailing" constant="20" symbolic="YES" id="TCe-09-69a"/>
+                <constraint firstItem="wPU-tm-24X" firstAttribute="centerY" secondItem="agU-OJ-eQx" secondAttribute="centerY" constant="-4" id="TJl-hX-pdW"/>
                 <constraint firstItem="wPU-tm-24X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="UEU-dE-yhb"/>
                 <constraint firstItem="d3g-gz-GbT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bXb-0S-Ep6"/>
                 <constraint firstAttribute="trailing" secondItem="Rtu-Fa-RhR" secondAttribute="trailing" constant="20" symbolic="YES" id="c0S-g5-vCj"/>
                 <constraint firstItem="Rtu-Fa-RhR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="eeI-Vc-vgc"/>
+                <constraint firstItem="agU-OJ-eQx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wPU-tm-24X" secondAttribute="trailing" constant="8" id="j6m-ju-ucI"/>
                 <constraint firstItem="Ct2-Hx-Cgj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="22.5" id="svB-s7-nWh"/>
                 <constraint firstItem="Rtu-Fa-RhR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="u2f-X8-gi9"/>
                 <constraint firstItem="D8i-B5-BP8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uP6-DG-UN4"/>
