@@ -20,8 +20,10 @@
 		951054791E6A517600A25B8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951054771E6A517600A25B8F /* Main.storyboard */; };
 		9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9510547A1E6A517600A25B8F /* Assets.xcassets */; };
 		9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9510547C1E6A517600A25B8F /* LaunchScreen.storyboard */; };
-		95AD425B1E6A8AE400865CAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD42591E6A8AE400865CAD /* LoginViewController.swift */; };
-		95AD425C1E6A8AE400865CAD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AD425A1E6A8AE400865CAD /* LoginViewController.xib */; };
+		95AD42601E6AAC1E00865CAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD425E1E6AAC1E00865CAD /* LoginViewController.swift */; };
+		95AD42611E6AAC1E00865CAD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AD425F1E6AAC1E00865CAD /* LoginViewController.xib */; };
+		95AD42641E6AAC6A00865CAD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD42621E6AAC6A00865CAD /* ResultViewController.swift */; };
+		95AD42651E6AAC6A00865CAD /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AD42631E6AAC6A00865CAD /* ResultViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +43,10 @@
 		9510547A1E6A517600A25B8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9510547D1E6A517600A25B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9510547F1E6A517600A25B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95AD42591E6A8AE400865CAD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = SuperBowl/gaki/LoginViewController.swift; sourceTree = "<group>"; };
-		95AD425A1E6A8AE400865CAD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = SuperBowl/gaki/LoginViewController.xib; sourceTree = "<group>"; };
+		95AD425E1E6AAC1E00865CAD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		95AD425F1E6AAC1E00865CAD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		95AD42621E6AAC6A00865CAD /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		95AD42631E6AAC6A00865CAD /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,8 +102,6 @@
 		951054671E6A517500A25B8F = {
 			isa = PBXGroup;
 			children = (
-				95AD42591E6A8AE400865CAD /* LoginViewController.swift */,
-				95AD425A1E6A8AE400865CAD /* LoginViewController.xib */,
 				951054721E6A517600A25B8F /* SuperBowl */,
 				951054711E6A517600A25B8F /* Products */,
 				62506B224AE2A93EE81BAD42 /* Pods */,
@@ -118,6 +120,7 @@
 		951054721E6A517600A25B8F /* SuperBowl */ = {
 			isa = PBXGroup;
 			children = (
+				95AD425D1E6AAC1E00865CAD /* gaki */,
 				49413D541E6AA31300AEEA2B /* watr */,
 				951054731E6A517600A25B8F /* AppDelegate.swift */,
 				951054751E6A517600A25B8F /* ViewController.swift */,
@@ -129,6 +132,17 @@
 				49413D071E6A611300AEEA2B /* ika */,
 			);
 			path = SuperBowl;
+			sourceTree = "<group>";
+		};
+		95AD425D1E6AAC1E00865CAD /* gaki */ = {
+			isa = PBXGroup;
+			children = (
+				95AD425E1E6AAC1E00865CAD /* LoginViewController.swift */,
+				95AD425F1E6AAC1E00865CAD /* LoginViewController.xib */,
+				95AD42621E6AAC6A00865CAD /* ResultViewController.swift */,
+				95AD42631E6AAC6A00865CAD /* ResultViewController.xib */,
+			);
+			path = gaki;
 			sourceTree = "<group>";
 		};
 		EF4E3AAB1E6A60C8000AA2E7 /* watanabe */ = {
@@ -202,7 +216,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AD425C1E6A8AE400865CAD /* LoginViewController.xib in Resources */,
+				95AD42611E6AAC1E00865CAD /* LoginViewController.xib in Resources */,
+				95AD42651E6AAC6A00865CAD /* ResultViewController.xib in Resources */,
 				9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */,
 				9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */,
 				951054791E6A517600A25B8F /* Main.storyboard in Resources */,
@@ -265,14 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AD42601E6AAC1E00865CAD /* LoginViewController.swift in Sources */,
 				49413D6E1E6AA31300AEEA2B /* CircleView.swift in Sources */,
 				951054761E6A517600A25B8F /* ViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
 				49413D531E6AA30600AEEA2B /* AudioEngine.swift in Sources */,
+				95AD42641E6AAC6A00865CAD /* ResultViewController.swift in Sources */,
 				49413D511E6AA2EE00AEEA2B /* ShiningView.swift in Sources */,
 				49413D6B1E6AA31300AEEA2B /* BowlsViewController.swift in Sources */,
 				49413D6F1E6AA31300AEEA2B /* JustCircleView.swift in Sources */,
-				95AD425B1E6A8AE400865CAD /* LoginViewController.swift in Sources */,
 				49413D6D1E6AA31300AEEA2B /* CGRect+Circle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
