@@ -39,7 +39,7 @@ class CircleView: UIView {
         self.good -= self.goodDownValue
     }
     
-    var goodUpValue: Double = 0.0001
+    var goodUpValue: Double = 0.01
     
     public func upGood() {
         self.good += self.goodUpValue
