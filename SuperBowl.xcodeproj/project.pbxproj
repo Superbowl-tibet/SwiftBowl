@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49413D091E6A61C500AEEA2B /* ShiningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49413D081E6A61C500AEEA2B /* ShiningView.swift */; };
 		5695B732A9DF90B04AB48053 /* Pods_SuperBowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3D2B03063E5272F1600551 /* Pods_SuperBowl.framework */; };
 		951054741E6A517600A25B8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951054731E6A517600A25B8F /* AppDelegate.swift */; };
 		951054761E6A517600A25B8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951054751E6A517600A25B8F /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		3F3D2B03063E5272F1600551 /* Pods_SuperBowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperBowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49413D081E6A61C500AEEA2B /* ShiningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiningView.swift; sourceTree = "<group>"; };
 		4FA60CC2608BC158E4076BF0 /* Pods-SuperBowl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.debug.xcconfig"; sourceTree = "<group>"; };
 		951054701E6A517600A25B8F /* SuperBowl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperBowl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951054731E6A517600A25B8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49413D071E6A611300AEEA2B /* ika */ = {
+			isa = PBXGroup;
+			children = (
+				49413D081E6A61C500AEEA2B /* ShiningView.swift */,
+			);
+			path = ika;
+			sourceTree = "<group>";
+		};
 		62506B224AE2A93EE81BAD42 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 				9510547A1E6A517600A25B8F /* Assets.xcassets */,
 				9510547C1E6A517600A25B8F /* LaunchScreen.storyboard */,
 				9510547F1E6A517600A25B8F /* Info.plist */,
+				49413D071E6A611300AEEA2B /* ika */,
 			);
 			path = SuperBowl;
 			sourceTree = "<group>";
@@ -202,7 +213,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -214,6 +225,7 @@
 			files = (
 				951054761E6A517600A25B8F /* ViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
+				49413D091E6A61C500AEEA2B /* ShiningView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +389,7 @@
 				951054841E6A517600A25B8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
