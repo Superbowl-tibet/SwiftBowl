@@ -39,6 +39,20 @@ class CircleView: UIView {
             self.setNeedsDisplay()
         }
     }
+    var parameter: Double {
+        let normalized: Double
+        if good > 1.0 {
+            normalized = 1.0
+        }
+        else if good < 0.0 {
+            normalized = 0.0
+        }
+        else {
+            normalized = good
+        }
+        
+        return normalized
+    }
     
     func color(good: Double) -> UIColor {
         return UIColor.white
@@ -166,7 +180,7 @@ class InteractiveCircleView: CircleView {
         
         #if true
             do {
-                let up:Double = 0.01
+                let up:Double = 0.001
                 self.good += up
                 print(self.good)
             }
