@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F8FA0911E6FBA99006DA053 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8FA08F1E6FBA99006DA053 /* AudioEngine.swift */; };
+		2F8FA0921E6FBA99006DA053 /* SuperBowlAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8FA0901E6FBA99006DA053 /* SuperBowlAudioEngine.swift */; };
+		2F8FA0971E6FBAFB006DA053 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8FA0951E6FBAFB006DA053 /* ResultViewController.swift */; };
+		2F8FA0981E6FBAFB006DA053 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8FA0961E6FBAFB006DA053 /* ResultViewController.xib */; };
+		2F8FA09D1E6FBB36006DA053 /* sample-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F8FA09A1E6FBB36006DA053 /* sample-1.mp3 */; };
+		2F8FA09E1E6FBB36006DA053 /* sample-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F8FA09B1E6FBB36006DA053 /* sample-2.mp3 */; };
+		2F8FA09F1E6FBB36006DA053 /* sample-3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F8FA09C1E6FBB36006DA053 /* sample-3.mp3 */; };
 		2F98C09B1E6A5FBB00005B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98C09A1E6A5FBB00005B38 /* AppDelegate.swift */; };
 		2F98C09D1E6A5FBB00005B38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98C09C1E6A5FBB00005B38 /* ViewController.swift */; };
 		2F98C0A01E6A5FBB00005B38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F98C09E1E6A5FBB00005B38 /* Main.storyboard */; };
@@ -31,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F8FA08F1E6FBA99006DA053 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioEngine.swift; path = ../../../SuperBowl/AudioTools/AudioEngine.swift; sourceTree = "<group>"; };
+		2F8FA0901E6FBA99006DA053 /* SuperBowlAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuperBowlAudioEngine.swift; path = ../../../SuperBowl/AudioTools/SuperBowlAudioEngine.swift; sourceTree = "<group>"; };
+		2F8FA0951E6FBAFB006DA053 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		2F8FA0961E6FBAFB006DA053 /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		2F8FA09A1E6FBB36006DA053 /* sample-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-1.mp3"; sourceTree = "<group>"; };
+		2F8FA09B1E6FBB36006DA053 /* sample-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-2.mp3"; sourceTree = "<group>"; };
+		2F8FA09C1E6FBB36006DA053 /* sample-3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-3.mp3"; sourceTree = "<group>"; };
 		2F98C0971E6A5FBB00005B38 /* CircleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F98C09A1E6A5FBB00005B38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F98C09C1E6A5FBB00005B38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +80,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F8FA0931E6FBA9F006DA053 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2F8FA08F1E6FBA99006DA053 /* AudioEngine.swift */,
+				2F8FA0901E6FBA99006DA053 /* SuperBowlAudioEngine.swift */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		2F8FA0941E6FBAFB006DA053 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				2F8FA0951E6FBAFB006DA053 /* ResultViewController.swift */,
+				2F8FA0961E6FBAFB006DA053 /* ResultViewController.xib */,
+			);
+			name = Result;
+			path = ../../../SuperBowl/Views/Result;
+			sourceTree = "<group>";
+		};
+		2F8FA0991E6FBB36006DA053 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F8FA09A1E6FBB36006DA053 /* sample-1.mp3 */,
+				2F8FA09B1E6FBB36006DA053 /* sample-2.mp3 */,
+				2F8FA09C1E6FBB36006DA053 /* sample-3.mp3 */,
+			);
+			name = Resources;
+			path = ../../../SuperBowl/Resources;
+			sourceTree = "<group>";
+		};
 		2F98C08E1E6A5FBB00005B38 = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +131,10 @@
 		2F98C0991E6A5FBB00005B38 /* CircleView */ = {
 			isa = PBXGroup;
 			children = (
+				2F8FA0931E6FBA9F006DA053 /* Audio */,
+				2F8FA0941E6FBAFB006DA053 /* Result */,
 				2FEC20751E6A84610064B743 /* CircleView */,
+				2F8FA0991E6FBB36006DA053 /* Resources */,
 				2F98C09A1E6A5FBB00005B38 /* AppDelegate.swift */,
 				2F98C09C1E6A5FBB00005B38 /* ViewController.swift */,
 				2F98C09E1E6A5FBB00005B38 /* Main.storyboard */,
@@ -206,7 +253,11 @@
 			files = (
 				2F98C0A51E6A5FBB00005B38 /* LaunchScreen.storyboard in Resources */,
 				2F98C0A21E6A5FBB00005B38 /* Assets.xcassets in Resources */,
+				2F8FA09D1E6FBB36006DA053 /* sample-1.mp3 in Resources */,
 				2FEC20791E6A88AA0064B743 /* BowlsViewController.xib in Resources */,
+				2F8FA09F1E6FBB36006DA053 /* sample-3.mp3 in Resources */,
+				2F8FA0981E6FBAFB006DA053 /* ResultViewController.xib in Resources */,
+				2F8FA09E1E6FBB36006DA053 /* sample-2.mp3 in Resources */,
 				2F98C0A01E6A5FBB00005B38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,12 +276,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F8FA0921E6FBA99006DA053 /* SuperBowlAudioEngine.swift in Sources */,
 				2FEC20741E6A845A0064B743 /* CircleView.swift in Sources */,
 				2FEC207B1E6A9A4A0064B743 /* JustCircleView.swift in Sources */,
 				2F98C09D1E6A5FBB00005B38 /* ViewController.swift in Sources */,
 				2FEC20781E6A88AA0064B743 /* BowlsViewController.swift in Sources */,
 				2F98C09B1E6A5FBB00005B38 /* AppDelegate.swift in Sources */,
 				2FEC20731E6A845A0064B743 /* CGRect+Circle.swift in Sources */,
+				2F8FA0911E6FBA99006DA053 /* AudioEngine.swift in Sources */,
+				2F8FA0971E6FBAFB006DA053 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
