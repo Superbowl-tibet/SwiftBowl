@@ -41,11 +41,11 @@
 		2F98C0AB1E6A5FBB00005B38 /* CircleViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F98C0AF1E6A5FBB00005B38 /* CircleViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewTests.swift; sourceTree = "<group>"; };
 		2F98C0B11E6A5FBB00005B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2FEC20711E6A845A0064B743 /* CGRect+Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+Circle.swift"; path = "../../../CGRect+Circle.swift"; sourceTree = "<group>"; };
-		2FEC20721E6A845A0064B743 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = ../../../CircleView.swift; sourceTree = "<group>"; };
-		2FEC20761E6A88AA0064B743 /* BowlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BowlsViewController.swift; path = ../../../BowlsViewController.swift; sourceTree = "<group>"; };
-		2FEC20771E6A88AA0064B743 /* BowlsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BowlsViewController.xib; path = ../../../BowlsViewController.xib; sourceTree = "<group>"; };
-		2FEC207A1E6A9A4A0064B743 /* JustCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JustCircleView.swift; path = ../../../JustCircleView.swift; sourceTree = "<group>"; };
+		2FEC20711E6A845A0064B743 /* CGRect+Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+Circle.swift"; path = "../../../SuperBowl/Utilities/CGRect+Circle.swift"; sourceTree = "<group>"; };
+		2FEC20721E6A845A0064B743 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = ../../../SuperBowl/Views/Common/CircleView.swift; sourceTree = "<group>"; };
+		2FEC20761E6A88AA0064B743 /* BowlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BowlsViewController.swift; path = ../../../SuperBowl/Views/Bowl/BowlsViewController.swift; sourceTree = "<group>"; };
+		2FEC20771E6A88AA0064B743 /* BowlsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BowlsViewController.xib; path = ../../../SuperBowl/Views/Bowl/BowlsViewController.xib; sourceTree = "<group>"; };
+		2FEC207A1E6A9A4A0064B743 /* JustCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JustCircleView.swift; path = ../../../SuperBowl/Views/Common/JustCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
