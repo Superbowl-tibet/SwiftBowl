@@ -16,7 +16,6 @@ protocol AudioEngine: class {
     /// サウンドの再生を終了する。
     func stop()
     
-    
     /// 高音トラックの音量プロパティ。有効な値の範囲は0~1。
     var highToneVolume: Float { get set }
     /// 低音トラックの音量プロパティ。有効な値の範囲は0~1。
@@ -25,11 +24,6 @@ protocol AudioEngine: class {
     /// 音を変化させるパラメータとして (0..1)
     @available(*, deprecated, message: "")
     var speed: Float { get set }
-    
-    /// 端末のパートを表現する数値 (0..n)
-    @available(*, deprecated, message: "")
-    var sound: Sound { get set }
-    
 }
 
 class AudioEngineMock: AudioEngine {
@@ -60,15 +54,6 @@ class AudioEngineMock: AudioEngine {
         get {
             print(#function)
             return 0
-        }
-        set {
-            print(#function, newValue)
-        }
-    }
-    var sound: Sound {
-        get {
-            print(#function)
-            return .part1
         }
         set {
             print(#function, newValue)

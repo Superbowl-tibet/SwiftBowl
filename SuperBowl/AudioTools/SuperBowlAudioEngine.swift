@@ -9,12 +9,6 @@
 import Foundation
 import AVFoundation
 
-enum Sound: String {
-    case part1 = "sample-1"
-    case part2 = "sample-2"
-    case part3 = "sample-3"
-}
-
 class SuperBowlAudioEngine: AudioEngine {
     
     private let audioEngine = SBTAudioEngine()
@@ -60,6 +54,10 @@ class SuperBowlAudioEngine: AudioEngine {
     }
     
     // deprecated
-    var speed: Float = 0
-    var sound: Sound = .part1
+    var speed: Float = 0 {
+        didSet {
+            self.highToneVolume = self.speed
+            self.lowToneVolume = self.speed
+        }
+    }
 }
