@@ -10,19 +10,23 @@ import Foundation
 
 protocol AudioEngine: class {
     
-    // 起動後テキトーに呼んでください。重複呼び出しがなければ良いです。
+    /// サウンドの再生を開始する。
     func play()
+    
+    /// サウンドの再生を終了する。
     func stop()
     
     
+    /// 高音トラックの音量プロパティ。有効な値の範囲は0~1。
     var highToneVolume: Float { get set }
+    /// 低音トラックの音量プロパティ。有効な値の範囲は0~1。
     var lowToneVolume: Float { get set }
     
-    // 音を変化させるパラメータとして (0..1)
+    /// 音を変化させるパラメータとして (0..1)
     @available(*, deprecated, message: "")
     var speed: Float { get set }
     
-    // 端末のパートを表現する数値 (0..n)
+    /// 端末のパートを表現する数値 (0..n)
     @available(*, deprecated, message: "")
     var sound: Sound { get set }
     
