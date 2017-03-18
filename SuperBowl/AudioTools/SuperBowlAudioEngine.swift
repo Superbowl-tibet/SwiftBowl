@@ -18,16 +18,16 @@ enum Sound: String {
 class SuperBowlAudioEngine: AudioEngine {
     
     private let audioEngine = SBTAudioEngine()
-    private let hightTonePartA = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-1", withExtension: "aif")!)!
-    private let hightTonePartB = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-1", withExtension: "aif")!)!
+    private let highTonePartA = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-1", withExtension: "aif")!)!
+    private let highTonePartB = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-1", withExtension: "aif")!)!
     private let lowTonePartA = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-2", withExtension: "aif")!)!
     private let lowTonePartB = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-2", withExtension: "aif")!)!
     init() {
-        self.audioEngine.add(self.hightTonePartA)
+        self.audioEngine.add(self.highTonePartA)
         self.audioEngine.setGain(0, gain: 0)
         
-        ExtAudioFileSeek(self.hightTonePartB.audioFile.extAudioFile, self.hightTonePartB.audioFile.totalFrames / 2);
-        self.audioEngine.add(self.hightTonePartB)
+        ExtAudioFileSeek(self.highTonePartB.audioFile.extAudioFile, self.highTonePartB.audioFile.totalFrames / 2);
+        self.audioEngine.add(self.highTonePartB)
         self.audioEngine.setGain(1, gain: 0)
         
         self.audioEngine.add(self.lowTonePartA)
@@ -46,23 +46,20 @@ class SuperBowlAudioEngine: AudioEngine {
         self.audioEngine.stopGraph()
     }
     
-    var heightToneVolume: Float = 0 {
+    var highToneVolume: Float = 0 {
         didSet {
-            self.audioEngine.setGain(0, gain: self.heightToneVolume)
-            self.audioEngine.setGain(1, gain: self.heightToneVolume)
+            self.audioEngine.setGain(0, gain: self.highToneVolume)
+            self.audioEngine.setGain(1, gain: self.highToneVolume)
         }
     }
     var lowToneVolume: Float = 0 {
         didSet {
-            self.audioEngine.setGain(2, gain: self.heightToneVolume)
-            self.audioEngine.setGain(3, gain: self.heightToneVolume)
+            self.audioEngine.setGain(2, gain: self.lowToneVolume)
+            self.audioEngine.setGain(3, gain: self.lowToneVolume)
         }
     }
     
-    @available(*, deprecated, message: "")
+    // deprecated
     var speed: Float = 0
-    
-    // 端末のパートを表現する数値 (0..n)
-    @available(*, deprecated, message: "")
     var sound: Sound = .part1
 }
