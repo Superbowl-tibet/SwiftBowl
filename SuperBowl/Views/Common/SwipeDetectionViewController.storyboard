@@ -33,9 +33,23 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Y-nW-Q36">
+                                        <rect key="frame" x="8" y="16" width="32" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                        <state key="normal" title="＜">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="popWithSender:" destination="yib-lg-dWD" eventType="touchUpInside" id="WRC-dA-XQf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="Q5Y-nW-Q36" firstAttribute="leading" secondItem="vto-xs-G5f" secondAttribute="leading" constant="8" id="Rb1-Ad-YVB"/>
+                                    <constraint firstItem="Q5Y-nW-Q36" firstAttribute="top" secondItem="vto-xs-G5f" secondAttribute="top" constant="16" id="nWs-24-EA0"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -56,13 +56,11 @@ class DetectionView: UIView {
     let radius: CGFloat?
   }
   
+  // MARK: - Public API
+  var isDebugging = false
+  
   // MARK: - Accessor
   private var touchPoints: [TouchPoint] = []
-  private let centerIndicator = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
-  private let centerIndicator2 = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 10.0))
-  private let centerIndicator3 = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 4.0, height: 4.0))
-  private let centerIndicator4 = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 4.0, height: 4.0))
-  private let centerIndicator5 = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 4.0, height: 4.0))
   
   override var canBecomeFirstResponder: Bool {
     return true
@@ -88,39 +86,11 @@ class DetectionView: UIView {
   
   private func setup() {
     super.isMultipleTouchEnabled = false
-    
-    func setupIndicator(indicator: UIView) {
-
-      indicator.clipsToBounds = true
-      indicator.layer.cornerRadius = indicator.frame.size.width / 2.0
-      indicator.isUserInteractionEnabled = false
-      
-      self.addSubview(indicator)
-      indicator.center = self.center
-    }
-    
-    self.centerIndicator.backgroundColor = UIColor.white
-    self.centerIndicator.isHidden = true
-    setupIndicator(indicator: self.centerIndicator)
-    
-    self.centerIndicator2.backgroundColor = UIColor.clear
-    self.centerIndicator2.layer.borderColor = UIColor.white.cgColor
-    self.centerIndicator2.layer.borderWidth = 1.0
-    setupIndicator(indicator: self.centerIndicator2)
-    
-    self.centerIndicator3.backgroundColor = UIColor.white
-    setupIndicator(indicator: self.centerIndicator3)
-
-    self.centerIndicator4.backgroundColor = UIColor.white
-    setupIndicator(indicator: self.centerIndicator4)
-
-    self.centerIndicator5.backgroundColor = UIColor.white
-    setupIndicator(indicator: self.centerIndicator5)
   }
   
   // MARK: -
   private func addTouch(touch: UITouch) {
-    // TODO: 古いtouchPointを削除する
+    // TODO: 古いtouchPointを削除する処理を入れたい
     
     let touchPointInView = touch.location(in: self)
     let now = Date()
@@ -146,17 +116,7 @@ class DetectionView: UIView {
         if let c = calculateCircleCenter(p1: p1.location, p2: p2.location, p3: touchPointInView) {
           
           radius = sqrt(pow(c.x-p1.location.x,2)+pow(c.y-p1.location.y,2))
-
-          self.centerIndicator2.frame.size = CGSize(width: radius! * 2.0, height: radius! * 2.0)
-          self.centerIndicator2.layer.cornerRadius = radius!
-          self.centerIndicator2.center = c
-          
           centerPoint = c
-
-          
-          self.centerIndicator3.center = p1.location
-          self.centerIndicator4.center = p2.location
-          self.centerIndicator5.center = touchPointInView
         }
       }
       
@@ -167,7 +127,15 @@ class DetectionView: UIView {
     }
     
     self.touchPoints.append(p3)
-    print(p3)
+  }
+  
+  // MARK: - Drawing
+  override func draw(_ rect: CGRect) {
+    
+    self.backgroundColor?.setFill()
+    UIBezierPath(rect: self.bounds).fill()
+    
+    
   }
   
   // MARK: - UIResponder

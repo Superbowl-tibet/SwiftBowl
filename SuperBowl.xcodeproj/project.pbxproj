@@ -31,6 +31,10 @@
 		ED4C85821E7FE279002AF543 /* SwipeDetectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */; };
 		ED4C85841E7FE392002AF543 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */; };
 		ED4C85861E7FEA1B002AF543 /* SwipeDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */; };
+		ED4C85891E7FEE67002AF543 /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85881E7FEE67002AF543 /* DebugMenuViewController.swift */; };
+		ED4C858B1E7FEE6F002AF543 /* DebugMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4C858A1E7FEE6F002AF543 /* DebugMenuViewController.storyboard */; };
+		ED4C858D1E7FEF97002AF543 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C858C1E7FEF97002AF543 /* Foundation+Extensions.swift */; };
+		ED4C858F1E7FF120002AF543 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C858E1E7FF120002AF543 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SwipeDetectionViewController.storyboard; sourceTree = "<group>"; };
 		ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDetectionView.swift; sourceTree = "<group>"; };
+		ED4C85881E7FEE67002AF543 /* DebugMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
+		ED4C858A1E7FEE6F002AF543 /* DebugMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DebugMenuViewController.storyboard; sourceTree = "<group>"; };
+		ED4C858C1E7FEF97002AF543 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
+		ED4C858E1E7FF120002AF543 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +160,8 @@
 			children = (
 				ED123E471E6AE2C6008D702E /* CGRect+Circle.swift */,
 				ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */,
+				ED4C858C1E7FEF97002AF543 /* Foundation+Extensions.swift */,
+				ED4C858E1E7FF120002AF543 /* UIViewController+Extensions.swift */,
 				ED123E661E6AE36E008D702E /* IBInstantiatable.swift */,
 			);
 			path = Utilities;
@@ -160,6 +170,7 @@
 		ED123E481E6AE2C6008D702E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED4C85871E7FEE4E002AF543 /* Debug */,
 				ED123E4D1E6AE2C6008D702E /* Common */,
 				ED123E511E6AE2C6008D702E /* Login */,
 				ED123E491E6AE2C6008D702E /* Bowl */,
@@ -206,6 +217,15 @@
 				ED123E561E6AE2C6008D702E /* ResultViewController.xib */,
 			);
 			path = Result;
+			sourceTree = "<group>";
+		};
+		ED4C85871E7FEE4E002AF543 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				ED4C85881E7FEE67002AF543 /* DebugMenuViewController.swift */,
+				ED4C858A1E7FEE6F002AF543 /* DebugMenuViewController.storyboard */,
+			);
+			path = Debug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +293,7 @@
 			files = (
 				ED123E5E1E6AE2C6008D702E /* BowlsViewController.xib in Resources */,
 				9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */,
+				ED4C858B1E7FEE6F002AF543 /* DebugMenuViewController.storyboard in Resources */,
 				9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */,
 				ED123E591E6AE2C6008D702E /* sample-1.mp3 in Resources */,
 				ED123E5A1E6AE2C6008D702E /* sample-2.mp3 in Resources */,
@@ -338,13 +359,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4C85891E7FEE67002AF543 /* DebugMenuViewController.swift in Sources */,
 				ED123E621E6AE2C6008D702E /* LoginViewController.swift in Sources */,
 				ED123E601E6AE2C6008D702E /* JustCircleView.swift in Sources */,
 				ED123E5F1E6AE2C6008D702E /* CircleView.swift in Sources */,
 				ED123E671E6AE36E008D702E /* IBInstantiatable.swift in Sources */,
+				ED4C858F1E7FF120002AF543 /* UIViewController+Extensions.swift in Sources */,
 				ED4C85841E7FE392002AF543 /* CGPoint+Extensions.swift in Sources */,
 				ED123E581E6AE2C6008D702E /* SuperBowlAudioEngine.swift in Sources */,
 				ED123E571E6AE2C6008D702E /* AudioEngine.swift in Sources */,
+				ED4C858D1E7FEF97002AF543 /* Foundation+Extensions.swift in Sources */,
 				ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */,
 				ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */,
 				ED4C85861E7FEA1B002AF543 /* SwipeDetectionView.swift in Sources */,

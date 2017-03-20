@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwipeDetectionViewController: UIViewController {
+final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
 
     struct TouchPoint {
         let location: CGPoint
@@ -42,7 +42,13 @@ class SwipeDetectionViewController: UIViewController {
         return .lightContent
     }
 
-    // MARK: - 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    // MARK: -
     private func calculateCircleCenter(p1: CGPoint, p2: CGPoint, p3: CGPoint) -> CGPoint? {
         
         let m0 = p2.y * p1.x
