@@ -10,6 +10,7 @@ import UIKit
 
 public protocol IBInstantiatable {
     static func instantiate() -> Self
+    static var ibFileName: String { get }
 }
 
 public extension IBInstantiatable where Self: UIView {
@@ -18,12 +19,12 @@ public extension IBInstantiatable where Self: UIView {
         return self.instantiateFromNib()
     }
 
-    static var nibName: String {
+    static var ibFileName: String {
         return String.init(describing: Self.self)
     }
     
     static var nib: UINib {
-        return UINib(nibName: self.nibName, bundle: nil)
+        return UINib(nibName: self.ibFileName, bundle: nil)
     }
     
     static func instantiateFromNib() -> Self {
@@ -37,12 +38,12 @@ public extension IBInstantiatable where Self: UIViewController {
         return self.instantiateFromStoryboard()
     }
     
-    static var storyboardName: String {
+    static var ibFileName: String {
         return String.init(describing: Self.self)
     }
     
     static var storyboard: UIStoryboard {
-        return UIStoryboard.init(name: self.storyboardName, bundle: nil)
+        return UIStoryboard.init(name: self.ibFileName, bundle: nil)
     }
     
     static func instantiateFromStoryboard() -> Self {
