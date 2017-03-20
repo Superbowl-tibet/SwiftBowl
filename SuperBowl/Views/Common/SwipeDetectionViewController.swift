@@ -8,16 +8,35 @@
 
 import UIKit
 
+protocol SwipeDetectionViewControllerDelegate: class {
+    func swipeDetectionViewController(controller: SwipeDetectionViewController, didUpdateTouch touch: SwipeDetectionViewController.TouchPoint)
+}
+
 final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
 
+    // MARK: Public Interfaces
     struct TouchPoint {
         let location: CGPoint
+        let force: CGFloat?
         let tappedAt: Date
         let velocity: CGFloat
         let circleCenterPoint: CGPoint?
         let radius: CGFloat?
     }
 
+    weak var delegate: SwipeDetectionViewControllerDelegate?
+    
+    /// スワイプ経路の3点から円の中心を算出するが、その3点を選択する際にどれだけ過去にさかのぼるかを決定するパラメータ
+    /// 小さくすると直近のノイズに弱くなり、大きくすると安定するが過去のノイズに弱くなる
+    var circleCalculationInterval = 30 {
+        didSet {
+            if self.circleCalculationInterval <= 0 {
+                fatalError("1以上")
+            }
+        }
+    }
+    
+    // MARK: -
     @IBOutlet private weak var detectionView: SwipeDetectionView! {
         didSet {
             self.detectionView.delegate = self
@@ -79,16 +98,22 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         return CGPoint(x: x, y: y)
     }
     
-    fileprivate func addTouch(point: CGPoint) {
+    fileprivate func addTouch(touch: UITouch) {
         // TODO: 古いtouchPointを削除する処理を入れたい
         
+        let point = touch.location(in: detectionView)
         let now = Date()
-        
         let p3: TouchPoint
+        let force: CGFloat?
         
-        let interval = 30
-        let p2Index = self.touchPoints.count - interval
-        let p1Index = self.touchPoints.count - (interval * 2)
+        if self.traitCollection.forceTouchCapability == .available {
+            force = touch.force
+        } else {
+            force = nil
+        }
+        
+        let p2Index = self.touchPoints.count - self.circleCalculationInterval
+        let p1Index = self.touchPoints.count - (self.circleCalculationInterval * 2)
         
         if p2Index >= 0 {
             
@@ -114,22 +139,19 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
                     self.circleView.center = c
                 }
             }
-            
-            p3 = TouchPoint(location: point, tappedAt: now, velocity: velocity, circleCenterPoint: centerPoint, radius: radius)
+            p3 = TouchPoint(location: point, force: force, tappedAt: now, velocity: velocity, circleCenterPoint: centerPoint, radius: radius)
             
         } else {
-            p3 = TouchPoint(location: point, tappedAt: now, velocity: 0.0, circleCenterPoint: nil, radius: nil)
+            p3 = TouchPoint(location: point, force: force, tappedAt: now, velocity: 0.0, circleCenterPoint: nil, radius: nil)
         }
         
         self.touchPoints.append(p3)
-        print(p3)
+        self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: p3)
     }
 }
 
 extension SwipeDetectionViewController: SwipeDetectionViewDelegate {
     func swipeDetectionView(detectionView: SwipeDetectionView, didUpdateTouch touch: UITouch) {
-        
-        let point = touch.location(in: detectionView)
-        self.addTouch(point: point)
+        self.addTouch(touch: touch)
     }
 }
