@@ -27,6 +27,10 @@
 		ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E551E6AE2C6008D702E /* ResultViewController.swift */; };
 		ED123E651E6AE2C6008D702E /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED123E561E6AE2C6008D702E /* ResultViewController.xib */; };
 		ED123E671E6AE36E008D702E /* IBInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E661E6AE36E008D702E /* IBInstantiatable.swift */; };
+		ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */; };
+		ED4C85821E7FE279002AF543 /* SwipeDetectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */; };
+		ED4C85841E7FE392002AF543 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */; };
+		ED4C85861E7FEA1B002AF543 /* SwipeDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		ED123E551E6AE2C6008D702E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		ED123E561E6AE2C6008D702E /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		ED123E661E6AE36E008D702E /* IBInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInstantiatable.swift; sourceTree = "<group>"; };
+		ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDetectionViewController.swift; sourceTree = "<group>"; };
+		ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SwipeDetectionViewController.storyboard; sourceTree = "<group>"; };
+		ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDetectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				ED123E471E6AE2C6008D702E /* CGRect+Circle.swift */,
+				ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */,
 				ED123E661E6AE36E008D702E /* IBInstantiatable.swift */,
 			);
 			path = Utilities;
@@ -174,6 +183,9 @@
 				ED123E4E1E6AE2C6008D702E /* CircleView.swift */,
 				ED123E4F1E6AE2C6008D702E /* JustCircleView.swift */,
 				ED123E501E6AE2C6008D702E /* ShiningView.swift */,
+				ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */,
+				ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */,
+				ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -267,6 +279,7 @@
 				ED123E631E6AE2C6008D702E /* LoginViewController.xib in Resources */,
 				ED123E5B1E6AE2C6008D702E /* sample-3.mp3 in Resources */,
 				ED123E651E6AE2C6008D702E /* ResultViewController.xib in Resources */,
+				ED4C85821E7FE279002AF543 /* SwipeDetectionViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,9 +342,12 @@
 				ED123E601E6AE2C6008D702E /* JustCircleView.swift in Sources */,
 				ED123E5F1E6AE2C6008D702E /* CircleView.swift in Sources */,
 				ED123E671E6AE36E008D702E /* IBInstantiatable.swift in Sources */,
+				ED4C85841E7FE392002AF543 /* CGPoint+Extensions.swift in Sources */,
 				ED123E581E6AE2C6008D702E /* SuperBowlAudioEngine.swift in Sources */,
 				ED123E571E6AE2C6008D702E /* AudioEngine.swift in Sources */,
 				ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */,
+				ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */,
+				ED4C85861E7FEA1B002AF543 /* SwipeDetectionView.swift in Sources */,
 				ED123E5D1E6AE2C6008D702E /* BowlsViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
 				ED123E5C1E6AE2C6008D702E /* CGRect+Circle.swift in Sources */,
