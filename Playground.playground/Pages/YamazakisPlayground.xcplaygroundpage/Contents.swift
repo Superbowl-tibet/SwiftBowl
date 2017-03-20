@@ -6,11 +6,25 @@ import PlaygroundSupport
 
 var str = "Hello, playground"
 
+extension CGPoint {
+  static func + (point: CGPoint, another: CGPoint) -> CGPoint {
+    return CGPoint(x: point.x + another.x, y: point.y + another.y)
+  }
+
+  static func - (point: CGPoint, another: CGPoint) -> CGPoint {
+    return CGPoint(x: point.x - another.x, y: point.y - another.y)
+  }
+
+  var length: CGFloat {
+    return sqrt(self.x * self.x + self.y * self.y)
+  }
+}
+
 class DetectionView: UIView {
   
   struct TouchPoint {
-    let origin: CGPoint
-    let time: Date
+    let location: CGPoint
+    let tappedAt: Date
     let velocity: CGFloat
     //    let circleCenterPoint: CGPoint? // TODO: 実装する
   }
@@ -49,7 +63,25 @@ class DetectionView: UIView {
     // TODO: 古いtouchPointを削除する
     
     let touchPointInView = touch.location(in: self)
-    print(touchPointInView)
+    let now = Date()
+    
+    let currentPoint: TouchPoint
+    
+    if let previousPoint = self.touchPoints.last {
+      
+      let interval = now.timeIntervalSince(previousPoint.tappedAt)
+      let distance = (touchPointInView - previousPoint.location).length
+      let velocity = distance / CGFloat(interval)
+      
+      currentPoint = TouchPoint(location: touchPointInView, tappedAt: now, velocity: velocity)
+      
+    } else {
+      
+      currentPoint = TouchPoint(location: touchPointInView, tappedAt: now, velocity: 0.0)
+    }
+    
+    self.touchPoints.append(currentPoint)
+    print(currentPoint)
   }
   
   // MARK: - UIResponder
@@ -57,7 +89,7 @@ class DetectionView: UIView {
     guard let touch = touches.first else {
       return
     }
-    self.addTouch(touch: touch)
+    self.addTouch(touch: touch) // TODO: velocityが途切れる処理を実装する
   }
   
   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
