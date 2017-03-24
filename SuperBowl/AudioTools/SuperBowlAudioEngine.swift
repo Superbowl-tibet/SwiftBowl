@@ -9,40 +9,55 @@
 import Foundation
 import AVFoundation
 
-enum Sound: String {
-    case part1 = "sample-1"
-    case part2 = "sample-2"
-    case part3 = "sample-3"
-}
-
 class SuperBowlAudioEngine: AudioEngine {
     
-    private lazy var player: AVAudioPlayer = {
-        let fileName = self.sound.rawValue
-        let url = Bundle.main.url(forResource: fileName, withExtension: "mp3")
-        let player = try! AVAudioPlayer.init(contentsOf: url!)
-        player.prepareToPlay()
-        player.numberOfLoops = -1
-        return player 
-    }()
+    private let audioEngine = SBTAudioEngine()
+    private let highTonePartA = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-1", withExtension: "aif")!)!
+    private let highTonePartB = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-1", withExtension: "aif")!)!
+    private let lowTonePartA = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-2", withExtension: "aif")!)!
+    private let lowTonePartB = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-2", withExtension: "aif")!)!
+    init() {
+        self.audioEngine.add(self.highTonePartA)
+        self.audioEngine.setGain(0, gain: 0)
+        
+        ExtAudioFileSeek(self.highTonePartB.audioFile.extAudioFile, self.highTonePartB.audioFile.totalFrames / 2);
+        self.audioEngine.add(self.highTonePartB)
+        self.audioEngine.setGain(1, gain: 0)
+        
+        self.audioEngine.add(self.lowTonePartA)
+        self.audioEngine.setGain(2, gain: 0)
+        
+        ExtAudioFileSeek(self.lowTonePartB.audioFile.extAudioFile, self.lowTonePartB.audioFile.totalFrames / 2);
+        self.audioEngine.add(self.lowTonePartB)
+        self.audioEngine.setGain(3, gain: 0)
+    }
     
     func play() {
-        self.player.play()
+        self.audioEngine.startGraph()
     }
     
     func stop() {
-        self.player.stop()
+        self.audioEngine.stopGraph()
     }
     
-    var speed: Float {
-        get {
-            return self.player.volume
+    var highToneVolume: Float = 0 {
+        didSet {
+            self.audioEngine.setGain(0, gain: self.highToneVolume)
+            self.audioEngine.setGain(1, gain: self.highToneVolume)
         }
-        set {
-            self.player.volume = newValue
+    }
+    var lowToneVolume: Float = 0 {
+        didSet {
+            self.audioEngine.setGain(2, gain: self.lowToneVolume)
+            self.audioEngine.setGain(3, gain: self.lowToneVolume)
         }
     }
     
-    // 端末のパートを表現する数値 (0..n)
-    var sound: Sound = .part1
+    // deprecated
+    var speed: Float = 0 {
+        didSet {
+            self.highToneVolume = self.speed
+            self.lowToneVolume = self.speed
+        }
+    }
 }

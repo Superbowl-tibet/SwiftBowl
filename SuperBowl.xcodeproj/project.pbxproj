@@ -13,9 +13,6 @@
 		9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9510547C1E6A517600A25B8F /* LaunchScreen.storyboard */; };
 		ED123E571E6AE2C6008D702E /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E401E6AE2C6008D702E /* AudioEngine.swift */; };
 		ED123E581E6AE2C6008D702E /* SuperBowlAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E411E6AE2C6008D702E /* SuperBowlAudioEngine.swift */; };
-		ED123E591E6AE2C6008D702E /* sample-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED123E431E6AE2C6008D702E /* sample-1.mp3 */; };
-		ED123E5A1E6AE2C6008D702E /* sample-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED123E441E6AE2C6008D702E /* sample-2.mp3 */; };
-		ED123E5B1E6AE2C6008D702E /* sample-3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED123E451E6AE2C6008D702E /* sample-3.mp3 */; };
 		ED123E5C1E6AE2C6008D702E /* CGRect+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E471E6AE2C6008D702E /* CGRect+Circle.swift */; };
 		ED123E5D1E6AE2C6008D702E /* BowlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E4A1E6AE2C6008D702E /* BowlsViewController.swift */; };
 		ED123E5E1E6AE2C6008D702E /* BowlsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED123E4B1E6AE2C6008D702E /* BowlsViewController.xib */; };
@@ -27,6 +24,11 @@
 		ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E551E6AE2C6008D702E /* ResultViewController.swift */; };
 		ED123E651E6AE2C6008D702E /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED123E561E6AE2C6008D702E /* ResultViewController.xib */; };
 		ED123E671E6AE36E008D702E /* IBInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E661E6AE36E008D702E /* IBInstantiatable.swift */; };
+		EF44BF021E7D69B2006D8AE8 /* SBTAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44BF011E7D69B2006D8AE8 /* SBTAudioEngine.m */; };
+		EF44BF051E7D6E51006D8AE8 /* SBTTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44BF041E7D6E51006D8AE8 /* SBTTrack.m */; };
+		EF44BF081E7D6EA1006D8AE8 /* SBTAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44BF071E7D6EA1006D8AE8 /* SBTAudioFile.m */; };
+		EF44BF111E7D9498006D8AE8 /* sample-1.aif in Resources */ = {isa = PBXBuildFile; fileRef = EF44BF0F1E7D9480006D8AE8 /* sample-1.aif */; };
+		EF44BF121E7D9498006D8AE8 /* sample-2.aif in Resources */ = {isa = PBXBuildFile; fileRef = EF44BF101E7D9480006D8AE8 /* sample-2.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +42,6 @@
 		DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBowl.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBowl/Pods-SuperBowl.release.xcconfig"; sourceTree = "<group>"; };
 		ED123E401E6AE2C6008D702E /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		ED123E411E6AE2C6008D702E /* SuperBowlAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperBowlAudioEngine.swift; sourceTree = "<group>"; };
-		ED123E431E6AE2C6008D702E /* sample-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-1.mp3"; sourceTree = "<group>"; };
-		ED123E441E6AE2C6008D702E /* sample-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-2.mp3"; sourceTree = "<group>"; };
-		ED123E451E6AE2C6008D702E /* sample-3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample-3.mp3"; sourceTree = "<group>"; };
 		ED123E471E6AE2C6008D702E /* CGRect+Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Circle.swift"; sourceTree = "<group>"; };
 		ED123E4A1E6AE2C6008D702E /* BowlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BowlsViewController.swift; sourceTree = "<group>"; };
 		ED123E4B1E6AE2C6008D702E /* BowlsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BowlsViewController.xib; sourceTree = "<group>"; };
@@ -54,6 +53,15 @@
 		ED123E551E6AE2C6008D702E /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		ED123E561E6AE2C6008D702E /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		ED123E661E6AE36E008D702E /* IBInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInstantiatable.swift; sourceTree = "<group>"; };
+		EF44BF001E7D69B2006D8AE8 /* SBTAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTAudioEngine.h; sourceTree = "<group>"; };
+		EF44BF011E7D69B2006D8AE8 /* SBTAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTAudioEngine.m; sourceTree = "<group>"; };
+		EF44BF031E7D6E51006D8AE8 /* SBTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTTrack.h; sourceTree = "<group>"; };
+		EF44BF041E7D6E51006D8AE8 /* SBTTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTTrack.m; sourceTree = "<group>"; };
+		EF44BF061E7D6EA1006D8AE8 /* SBTAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTAudioFile.h; sourceTree = "<group>"; };
+		EF44BF071E7D6EA1006D8AE8 /* SBTAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTAudioFile.m; sourceTree = "<group>"; };
+		EF44BF0F1E7D9480006D8AE8 /* sample-1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-1.aif"; sourceTree = "<group>"; };
+		EF44BF101E7D9480006D8AE8 /* sample-2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-2.aif"; sourceTree = "<group>"; };
+		EF44BF131E7D9834006D8AE8 /* SuperBowl-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SuperBowl-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,12 @@
 			children = (
 				ED123E401E6AE2C6008D702E /* AudioEngine.swift */,
 				ED123E411E6AE2C6008D702E /* SuperBowlAudioEngine.swift */,
+				EF44BF001E7D69B2006D8AE8 /* SBTAudioEngine.h */,
+				EF44BF011E7D69B2006D8AE8 /* SBTAudioEngine.m */,
+				EF44BF031E7D6E51006D8AE8 /* SBTTrack.h */,
+				EF44BF041E7D6E51006D8AE8 /* SBTTrack.m */,
+				EF44BF061E7D6EA1006D8AE8 /* SBTAudioFile.h */,
+				EF44BF071E7D6EA1006D8AE8 /* SBTAudioFile.m */,
 			);
 			path = AudioTools;
 			sourceTree = "<group>";
@@ -130,9 +144,8 @@
 		ED123E421E6AE2C6008D702E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ED123E431E6AE2C6008D702E /* sample-1.mp3 */,
-				ED123E441E6AE2C6008D702E /* sample-2.mp3 */,
-				ED123E451E6AE2C6008D702E /* sample-3.mp3 */,
+				EF44BF0F1E7D9480006D8AE8 /* sample-1.aif */,
+				EF44BF101E7D9480006D8AE8 /* sample-2.aif */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 			children = (
 				ED123E471E6AE2C6008D702E /* CGRect+Circle.swift */,
 				ED123E661E6AE36E008D702E /* IBInstantiatable.swift */,
+				EF44BF131E7D9834006D8AE8 /* SuperBowl-Bridging-Header.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -230,6 +244,7 @@
 					9510546F1E6A517500A25B8F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = T5S77M8KEE;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,10 +275,9 @@
 				ED123E5E1E6AE2C6008D702E /* BowlsViewController.xib in Resources */,
 				9510547E1E6A517600A25B8F /* LaunchScreen.storyboard in Resources */,
 				9510547B1E6A517600A25B8F /* Assets.xcassets in Resources */,
-				ED123E591E6AE2C6008D702E /* sample-1.mp3 in Resources */,
-				ED123E5A1E6AE2C6008D702E /* sample-2.mp3 in Resources */,
 				ED123E631E6AE2C6008D702E /* LoginViewController.xib in Resources */,
-				ED123E5B1E6AE2C6008D702E /* sample-3.mp3 in Resources */,
+				EF44BF121E7D9498006D8AE8 /* sample-2.aif in Resources */,
+				EF44BF111E7D9498006D8AE8 /* sample-1.aif in Resources */,
 				ED123E651E6AE2C6008D702E /* ResultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,16 +337,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF44BF021E7D69B2006D8AE8 /* SBTAudioEngine.m in Sources */,
 				ED123E621E6AE2C6008D702E /* LoginViewController.swift in Sources */,
 				ED123E601E6AE2C6008D702E /* JustCircleView.swift in Sources */,
 				ED123E5F1E6AE2C6008D702E /* CircleView.swift in Sources */,
 				ED123E671E6AE36E008D702E /* IBInstantiatable.swift in Sources */,
 				ED123E581E6AE2C6008D702E /* SuperBowlAudioEngine.swift in Sources */,
 				ED123E571E6AE2C6008D702E /* AudioEngine.swift in Sources */,
+				EF44BF051E7D6E51006D8AE8 /* SBTTrack.m in Sources */,
 				ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */,
 				ED123E5D1E6AE2C6008D702E /* BowlsViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
 				ED123E5C1E6AE2C6008D702E /* CGRect+Circle.swift in Sources */,
+				EF44BF081E7D6EA1006D8AE8 /* SBTAudioFile.m in Sources */,
 				ED123E611E6AE2C6008D702E /* ShiningView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,11 +464,14 @@
 			baseConfigurationReference = 4FA60CC2608BC158E4076BF0 /* Pods-SuperBowl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = T5S77M8KEE;
 				INFOPLIST_FILE = SuperBowl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmizogaki.SuperBowl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SuperBowl/Utilities/SuperBowl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -461,11 +481,13 @@
 			baseConfigurationReference = DA382B72DAD1F2DC9608E42E /* Pods-SuperBowl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = T5S77M8KEE;
 				INFOPLIST_FILE = SuperBowl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmizogaki.SuperBowl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SuperBowl/Utilities/SuperBowl-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
