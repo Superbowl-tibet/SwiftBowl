@@ -20,9 +20,3 @@ class ResultViewController: UIViewController {
         return .default
     }
 }
-
-extension UIViewController {
-    @IBAction func dismiss(sender: AnyObject!) {
-        self.dismiss(animated: true, completion: nil)
-    }
-}

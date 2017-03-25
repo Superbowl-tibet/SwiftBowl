@@ -91,8 +91,19 @@
                         <action selector="push:" destination="-1" eventType="touchUpInside" id="gaC-xu-W3Z"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqa-wS-ZN9">
+                    <rect key="frame" x="337" y="26" width="22" height="22"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="openDebugMenuWithSender:" destination="-1" eventType="touchUpInside" id="j4G-wz-hp3"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Wqa-wS-ZN9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="FHP-f2-B1D"/>
+                <constraint firstAttribute="trailing" secondItem="Wqa-wS-ZN9" secondAttribute="trailing" constant="16" id="L9x-aL-pbl"/>
+            </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>

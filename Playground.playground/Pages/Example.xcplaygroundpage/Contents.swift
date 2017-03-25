@@ -5,7 +5,6 @@ import PlaygroundSupport
 
 // CocoaPodsでインストールしたframeworkもimportできる
 // もしimportエラーが起きたら、そのframeworkを選択して適当なsimulatorでビルドする
-import Spring
 
 var str = "Hello, playground"
 

@@ -31,18 +31,21 @@ class LoginViewController: UIViewController {
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: - Actions
     @IBAction func push(_ sender: UIButton) {
         self.present(BowlsViewController(), animated: true, completion: nil)
     }
     
-    override func viewWillLayoutSubviews() {
+    @IBAction func openDebugMenu(sender: AnyObject!) {
         
-        super.viewWillLayoutSubviews()
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        let debugMenuViewController = DebugMenuViewController.instantiate()
+        let navigationController = UINavigationController(rootViewController: debugMenuViewController)
+        
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 
