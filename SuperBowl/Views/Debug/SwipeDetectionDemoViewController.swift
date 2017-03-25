@@ -36,9 +36,15 @@ class SwipeDetectionDemoViewController: UIViewController {
 
 extension SwipeDetectionDemoViewController: SwipeDetectionViewControllerDelegate {
     func swipeDetectionViewController(controller: SwipeDetectionViewController, didUpdateTouch touch: SwipeDetectionViewController.TouchPoint) {
-        //        print(touch)
         
-        var message = String(format: "速度\n%.1f", touch.velocity)
+        let pressureValue: String
+        if let force = touch.force {
+            pressureValue = String(format: "%.1f", force)
+        } else {
+            pressureValue = "利用不可"
+        }
+        
+        var message = String(format: "速度\n%.1f\n\n圧力\n", touch.velocity) + pressureValue
         if let center = touch.circleCenterPoint,
             let radius = touch.radius {
             message += String(format: "\n\n中心点\n(%.1f, %.1f)\n\n半径\n%.1f", center.x, center.y, radius)
