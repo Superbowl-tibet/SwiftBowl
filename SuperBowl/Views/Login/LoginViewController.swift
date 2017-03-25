@@ -37,9 +37,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func push(_ sender: UIButton) {
-        let viewcontroller = BowlsViewController()
-        viewcontroller.userName = nameTextField.text
-        self.present(viewcontroller, animated: true, completion: nil)
+        self.present(BowlsViewController(), animated: true, completion: nil)
     }
     
     @IBAction func openDebugMenu(sender: AnyObject!) {
