@@ -103,12 +103,24 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
     }
     
     private func convertTouchParameters(touch: UITouch) -> TouchPoint {
-        // TODO: 古いtouchPointを削除する処理を入れたい
         
         let point = touch.location(in: detectionView)
         let now = Date()
-        let p3: TouchPoint
         let force: CGFloat?
+        let velocity: CGFloat
+        var centerPoint: CGPoint? = nil
+        var radius: CGFloat? = nil
+
+        if let lastPoint = self.touchPoints.last {
+            
+            let interval = now.timeIntervalSince(lastPoint.tappedAt)
+            let distance = (point - lastPoint.location).length
+            
+            velocity = distance / CGFloat(interval)
+
+        } else {
+            velocity = 0.0
+        }
         
         if self.traitCollection.forceTouchCapability == .available {
             force = touch.force
@@ -119,37 +131,24 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         let p2Index = self.touchPoints.count - self.circleCalculationInterval
         let p1Index = self.touchPoints.count - (self.circleCalculationInterval * 2)
         
-        if p2Index >= 0 {
-            
+        if p1Index >= 0 {
+            let p1 = self.touchPoints[p1Index]
             let p2 = self.touchPoints[p2Index]
-            let interval = now.timeIntervalSince(p2.tappedAt)
-            let distance = (point - p2.location).length
-            let velocity = distance / CGFloat(interval)
-            var centerPoint: CGPoint? = nil
-            var radius: CGFloat? = nil
-            
-            if p1Index >= 0 {
-                let p1 = self.touchPoints[p1Index]
+
+            if let c = self.calculateCircleCenter(p1: p1.location, p2: p2.location, p3: point) {
                 
-                if let c = self.calculateCircleCenter(p1: p1.location, p2: p2.location, p3: point) {
-                    
-                    radius = sqrt(pow(c.x-p1.location.x,2)+pow(c.y-p1.location.y,2))
-                    centerPoint = c
-                    
-                    let diameter = radius! * 2.0
-                    self.circleView.isHidden = false
-                    self.circleView.frame.size = CGSize(width: diameter, height: diameter)
-                    self.circleView.layer.cornerRadius = radius!
-                    self.circleView.center = c
-                }
+                radius = sqrt(pow(c.x-p1.location.x,2)+pow(c.y-p1.location.y,2))
+                centerPoint = c
+                
+                let diameter = radius! * 2.0
+                self.circleView.isHidden = false
+                self.circleView.frame.size = CGSize(width: diameter, height: diameter)
+                self.circleView.layer.cornerRadius = radius!
+                self.circleView.center = c
             }
-            p3 = TouchPoint(location: point, force: force, tappedAt: now, velocity: velocity, circleCenterPoint: centerPoint, radius: radius)
-            
-        } else {
-            p3 = TouchPoint(location: point, force: force, tappedAt: now, velocity: 0.0, circleCenterPoint: nil, radius: nil)
         }
-        
-        return p3
+
+        return TouchPoint(location: point, force: force, tappedAt: now, velocity: velocity, circleCenterPoint: centerPoint, radius: radius)
     }
     
     fileprivate func addTouch(touch: UITouch) {
@@ -173,6 +172,8 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
             
             self.touchPoints.append(zeroVelocityPoint)
             self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: zeroVelocityPoint)
+            
+            self.touchPoints = []
         }
     }
 }
