@@ -83,9 +83,9 @@ class SwipeDetectionDemoViewController: UIViewController {
         }
     }
     
-    fileprivate func updateTouch(_ touch: SwipeDetectionViewController.TouchPoint) {
+    fileprivate func updateEvent(_ event: SwipeDetectionViewController.SwipeEvent) {
         
-        if touch.velocity > 0.0 {
+        if event.velocity > 0.0 {
             // velocityは高低音の割合を決めて、そこに全体の音量を掛け算して最終的な音量を決める
             // 速度50(下限): low: 0.95, high: 0.1
             // 速度450(上限): low: 0.55, high: 0.9
@@ -108,22 +108,22 @@ class SwipeDetectionDemoViewController: UIViewController {
 }
 
 extension SwipeDetectionDemoViewController: SwipeDetectionViewControllerDelegate {
-    func swipeDetectionViewController(controller: SwipeDetectionViewController, didUpdateTouch touch: SwipeDetectionViewController.TouchPoint) {
+    func swipeDetectionViewController(controller: SwipeDetectionViewController, didUpdateEvent event: SwipeDetectionViewController.SwipeEvent) {
         
         let pressureValue: String
-        if let force = touch.force {
+        if let force = event.force {
             pressureValue = String(format: "%.1f", force)
         } else {
             pressureValue = "測定不可"
         }
         
-        var message = String(format: "速度\n%.1f\n\n圧力\n", touch.velocity) + pressureValue
-        if let center = touch.circleCenterPoint,
-            let radius = touch.radius {
+        var message = String(format: "速度\n%.1f\n\n圧力\n", event.velocity) + pressureValue
+        if let center = event.circleCenterPoint,
+            let radius = event.radius {
             message += String(format: "\n\n中心点\n(%.1f, %.1f)\n\n半径\n%.1f", center.x, center.y, radius)
         }
         self.statusLabel.text = message
         
-        self.updateTouch(touch)
+        self.updateEvent(event)
     }
 }

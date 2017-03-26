@@ -9,22 +9,24 @@
 import UIKit
 
 protocol SwipeDetectionViewControllerDelegate: class {
-    func swipeDetectionViewController(controller: SwipeDetectionViewController, didUpdateTouch touch: SwipeDetectionViewController.TouchPoint)
+    func swipeDetectionViewController(controller: SwipeDetectionViewController, didUpdateEvent event: SwipeDetectionViewController.SwipeEvent)
 }
 
 final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
 
+    
+    
     // MARK: Public Interfaces
-    struct TouchPoint {
+    struct SwipeEvent {
         let location: CGPoint
         let force: CGFloat?
-        let tappedAt: Date
+        let touchedAt: Date
         let velocity: CGFloat
         let circleCenterPoint: CGPoint?
         let radius: CGFloat?
         
-        static func zero(location: CGPoint, tappedAt: Date) -> TouchPoint {
-            return self.init(location: location, force: nil, tappedAt: tappedAt, velocity: 0.0, circleCenterPoint: nil, radius: nil)
+        static func zero(location: CGPoint, touchedAt: Date) -> SwipeEvent {
+            return self.init(location: location, force: nil, touchedAt: touchedAt, velocity: 0.0, circleCenterPoint: nil, radius: nil)
         }
     }
 
@@ -59,7 +61,7 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         }
     }
     
-    private var touchPoints: [TouchPoint] = []
+    private var swipeEvents: [SwipeEvent] = []
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -99,7 +101,7 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         return CGPoint(x: x, y: y)
     }
     
-    private func convertTouchParameters(touch: UITouch) -> TouchPoint {
+    private func convertTouchParameters(touch: UITouch) -> SwipeEvent {
         
         let point = touch.location(in: detectionView)
         let now = Date()
@@ -108,9 +110,9 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         var centerPoint: CGPoint? = nil
         var radius: CGFloat? = nil
 
-        if let lastPoint = self.touchPoints.last {
+        if let lastPoint = self.swipeEvents.last {
             
-            let interval = now.timeIntervalSince(lastPoint.tappedAt)
+            let interval = now.timeIntervalSince(lastPoint.touchedAt)
             let distance = (point - lastPoint.location).length
             
             velocity = distance / CGFloat(interval)
@@ -125,13 +127,13 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
             force = nil
         }
         
-        let p2Index = self.touchPoints.count - self.circleCalculationInterval
-        let p1Index = self.touchPoints.count - (self.circleCalculationInterval * 2)
+        let p2Index = self.swipeEvents.count - self.circleCalculationInterval
+        let p1Index = self.swipeEvents.count - (self.circleCalculationInterval * 2)
         
         self.circleView.isHidden = true
         if p1Index >= 0 {
-            let p1 = self.touchPoints[p1Index]
-            let p2 = self.touchPoints[p2Index]
+            let p1 = self.swipeEvents[p1Index]
+            let p2 = self.swipeEvents[p2Index]
 
             if let center = self.calculateCircleCenter(p1: p1.location, p2: p2.location, p3: point) {
                 
@@ -149,33 +151,33 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
             }
         }
 
-        return TouchPoint(location: point, force: force, tappedAt: now, velocity: velocity, circleCenterPoint: centerPoint, radius: radius)
+        return SwipeEvent(location: point, force: force, touchedAt: now, velocity: velocity, circleCenterPoint: centerPoint, radius: radius)
     }
     
     fileprivate func addTouch(touch: UITouch) {
         
-        let touchPoint = self.convertTouchParameters(touch: touch)
+        let swipeEvent = self.convertTouchParameters(touch: touch)
         
-        self.touchPoints.append(touchPoint)
-        self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: touchPoint)
+        self.swipeEvents.append(swipeEvent)
+        self.delegate?.swipeDetectionViewController(controller: self, didUpdateEvent: swipeEvent)
     }
     
     fileprivate func touchEnded(touch: UITouch) {
         
-        let touchPoint = self.convertTouchParameters(touch: touch)
+        let swipeEvent = self.convertTouchParameters(touch: touch)
         
-        self.touchPoints.append(touchPoint)
-        self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: touchPoint)
+        self.swipeEvents.append(swipeEvent)
+        self.delegate?.swipeDetectionViewController(controller: self, didUpdateEvent: swipeEvent)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             
-            let zeroVelocityPoint = TouchPoint.zero(location: touchPoint.location, tappedAt: Date())
+            let zeroVelocityPoint = SwipeEvent.zero(location: swipeEvent.location, touchedAt: Date())
             
-            self.touchPoints.append(zeroVelocityPoint)
-            self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: zeroVelocityPoint)
+            self.swipeEvents.append(zeroVelocityPoint)
+            self.delegate?.swipeDetectionViewController(controller: self, didUpdateEvent: zeroVelocityPoint)
             
             self.circleView.isHidden = true
-            self.touchPoints = []
+            self.swipeEvents = []
         }
     }
 }
