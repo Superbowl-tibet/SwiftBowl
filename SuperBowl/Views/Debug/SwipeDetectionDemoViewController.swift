@@ -12,7 +12,12 @@ class SwipeDetectionDemoViewController: UIViewController {
     
     @IBOutlet fileprivate weak var statusLabel: UILabel!
     
-    private var contentViewController: SwipeDetectionViewController!
+    private var contentViewController: SwipeDetectionViewController! {
+        didSet {
+            self.contentViewController.delegate = self
+            self.contentViewController.isDebug = true
+        }
+    }
 
     private let audioEngine = SuperBowlAudioEngine()
     private var audioParameter = SuperBowlAudioEngine.AudioParameter(highToneVolume: 0.0, lowToneVolume: 0.0)
@@ -71,7 +76,6 @@ class SwipeDetectionDemoViewController: UIViewController {
         switch segue.identifier! {
         case "SwipeDetectionView":
             self.contentViewController = segue.destination as! SwipeDetectionViewController
-            self.contentViewController.delegate = self
             
         default:
             fatalError("segue.identifierが設定されていません")

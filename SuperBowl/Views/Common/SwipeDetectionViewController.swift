@@ -39,6 +39,11 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
             }
         }
     }
+    var isDebug = false {
+        didSet {
+            self.circleView?.isHidden = !self.isDebug
+        }
+    }
     
     // MARK: -
     @IBOutlet private weak var detectionView: SwipeDetectionView! {
@@ -50,7 +55,7 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         didSet {
             self.circleView.layer.borderColor = UIColor.white.cgColor
             self.circleView.layer.borderWidth = 1.0
-            self.circleView.isHidden = true
+            self.circleView.isHidden = !self.isDebug
         }
     }
     
@@ -59,6 +64,8 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.circleView.isHidden = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -131,20 +138,24 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         let p2Index = self.touchPoints.count - self.circleCalculationInterval
         let p1Index = self.touchPoints.count - (self.circleCalculationInterval * 2)
         
+        self.circleView.isHidden = true
         if p1Index >= 0 {
             let p1 = self.touchPoints[p1Index]
             let p2 = self.touchPoints[p2Index]
 
-            if let c = self.calculateCircleCenter(p1: p1.location, p2: p2.location, p3: point) {
+            if let center = self.calculateCircleCenter(p1: p1.location, p2: p2.location, p3: point) {
                 
-                radius = sqrt(pow(c.x-p1.location.x,2)+pow(c.y-p1.location.y,2))
-                centerPoint = c
+                radius = (center - p1.location).length
+                centerPoint = center
                 
-                let diameter = radius! * 2.0
-                self.circleView.isHidden = false
-                self.circleView.frame.size = CGSize(width: diameter, height: diameter)
-                self.circleView.layer.cornerRadius = radius!
-                self.circleView.center = c
+                if self.isDebug {
+                    
+                    let diameter = radius! * 2.0
+                    self.circleView.isHidden = false
+                    self.circleView.frame.size = CGSize(width: diameter, height: diameter)
+                    self.circleView.layer.cornerRadius = radius!
+                    self.circleView.center = center
+                }
             }
         }
 
@@ -173,6 +184,7 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
             self.touchPoints.append(zeroVelocityPoint)
             self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: zeroVelocityPoint)
             
+            self.circleView.isHidden = true
             self.touchPoints = []
         }
     }
