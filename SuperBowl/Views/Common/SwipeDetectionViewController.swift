@@ -22,6 +22,10 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         let velocity: CGFloat
         let circleCenterPoint: CGPoint?
         let radius: CGFloat?
+        
+        static func zero(location: CGPoint, tappedAt: Date) -> TouchPoint {
+            return self.init(location: location, force: nil, tappedAt: tappedAt, velocity: 0.0, circleCenterPoint: nil, radius: nil)
+        }
     }
 
     weak var delegate: SwipeDetectionViewControllerDelegate?
@@ -98,7 +102,7 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
         return CGPoint(x: x, y: y)
     }
     
-    fileprivate func addTouch(touch: UITouch) {
+    private func convertTouchParameters(touch: UITouch) -> TouchPoint {
         // TODO: 古いtouchPointを削除する処理を入れたい
         
         let point = touch.location(in: detectionView)
@@ -145,13 +149,40 @@ final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
             p3 = TouchPoint(location: point, force: force, tappedAt: now, velocity: 0.0, circleCenterPoint: nil, radius: nil)
         }
         
-        self.touchPoints.append(p3)
-        self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: p3)
+        return p3
+    }
+    
+    fileprivate func addTouch(touch: UITouch) {
+        
+        let touchPoint = self.convertTouchParameters(touch: touch)
+        
+        self.touchPoints.append(touchPoint)
+        self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: touchPoint)
+    }
+    
+    fileprivate func touchEnded(touch: UITouch) {
+        
+        let touchPoint = self.convertTouchParameters(touch: touch)
+        
+        self.touchPoints.append(touchPoint)
+        self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: touchPoint)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            
+            let zeroVelocityPoint = TouchPoint.zero(location: touchPoint.location, tappedAt: Date())
+            
+            self.touchPoints.append(zeroVelocityPoint)
+            self.delegate?.swipeDetectionViewController(controller: self, didUpdateTouch: zeroVelocityPoint)
+        }
     }
 }
 
 extension SwipeDetectionViewController: SwipeDetectionViewDelegate {
     func swipeDetectionView(detectionView: SwipeDetectionView, didUpdateTouch touch: UITouch) {
         self.addTouch(touch: touch)
+    }
+    
+    func swipeDetectionView(detectionView: SwipeDetectionView, didEndTouch touch: UITouch) {
+        self.touchEnded(touch: touch)
     }
 }

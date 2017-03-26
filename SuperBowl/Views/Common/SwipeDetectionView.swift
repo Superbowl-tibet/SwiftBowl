@@ -10,6 +10,7 @@ import UIKit
 
 protocol SwipeDetectionViewDelegate: class {
     func swipeDetectionView(detectionView: SwipeDetectionView, didUpdateTouch touch: UITouch)
+    func swipeDetectionView(detectionView: SwipeDetectionView, didEndTouch touch: UITouch)
 }
 
 class SwipeDetectionView: UIView {
@@ -29,5 +30,23 @@ class SwipeDetectionView: UIView {
             return
         }
         self.delegate?.swipeDetectionView(detectionView: self, didUpdateTouch: touch)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        self.touchEnded(touch: touch)
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        self.touchEnded(touch: touch)
+    }
+    
+    func touchEnded(touch: UITouch) {
+        self.delegate?.swipeDetectionView(detectionView: self, didEndTouch: touch)
     }
 }
