@@ -11,6 +11,11 @@ import AVFoundation
 
 class SuperBowlAudioEngine: AudioEngine {
     
+    struct AudioParameter {
+        var highToneVolume: Float
+        var lowToneVolume: Float
+    }
+    
     private let audioEngine = SBTAudioEngine()
     private let highTonePartA = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-1", withExtension: "aif")!)!
     private let highTonePartB = SBTTrack(audioURL: Bundle.main.url(forResource: "sample-1", withExtension: "aif")!)!
@@ -51,6 +56,11 @@ class SuperBowlAudioEngine: AudioEngine {
             self.audioEngine.setGain(2, gain: self.lowToneVolume)
             self.audioEngine.setGain(3, gain: self.lowToneVolume)
         }
+    }
+    
+    func set(parameter: AudioParameter) {
+        self.highToneVolume = parameter.highToneVolume
+        self.lowToneVolume = parameter.lowToneVolume
     }
     
     // deprecated
