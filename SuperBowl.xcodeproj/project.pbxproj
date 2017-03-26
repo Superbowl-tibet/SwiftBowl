@@ -27,7 +27,7 @@
 		ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */; };
 		ED4C85821E7FE279002AF543 /* SwipeDetectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */; };
 		ED4C85841E7FE392002AF543 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */; };
-		ED4C85861E7FEA1B002AF543 /* SwipeDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */; };
+		ED4C85861E7FEA1B002AF543 /* TouchEventDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85851E7FEA1B002AF543 /* TouchEventDetectionView.swift */; };
 		ED4C85891E7FEE67002AF543 /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85881E7FEE67002AF543 /* DebugMenuViewController.swift */; };
 		ED4C858B1E7FEE6F002AF543 /* DebugMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4C858A1E7FEE6F002AF543 /* DebugMenuViewController.storyboard */; };
 		ED4C858D1E7FEF97002AF543 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C858C1E7FEF97002AF543 /* Foundation+Extensions.swift */; };
@@ -66,7 +66,7 @@
 		ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDetectionViewController.swift; sourceTree = "<group>"; };
 		ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SwipeDetectionViewController.storyboard; sourceTree = "<group>"; };
 		ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDetectionView.swift; sourceTree = "<group>"; };
+		ED4C85851E7FEA1B002AF543 /* TouchEventDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEventDetectionView.swift; sourceTree = "<group>"; };
 		ED4C85881E7FEE67002AF543 /* DebugMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
 		ED4C858A1E7FEE6F002AF543 /* DebugMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DebugMenuViewController.storyboard; sourceTree = "<group>"; };
 		ED4C858C1E7FEF97002AF543 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 				ED123E4E1E6AE2C6008D702E /* CircleView.swift */,
 				ED123E4F1E6AE2C6008D702E /* JustCircleView.swift */,
 				ED123E501E6AE2C6008D702E /* ShiningView.swift */,
-				ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */,
+				ED4C85851E7FEA1B002AF543 /* TouchEventDetectionView.swift */,
 				ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */,
 				ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */,
 			);
@@ -395,7 +395,7 @@
 				EF44BF051E7D6E51006D8AE8 /* SBTTrack.m in Sources */,
 				ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */,
 				ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */,
-				ED4C85861E7FEA1B002AF543 /* SwipeDetectionView.swift in Sources */,
+				ED4C85861E7FEA1B002AF543 /* TouchEventDetectionView.swift in Sources */,
 				ED123E5D1E6AE2C6008D702E /* BowlsViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
 				ED123E5C1E6AE2C6008D702E /* CGRect+Circle.swift in Sources */,
