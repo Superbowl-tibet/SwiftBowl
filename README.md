@@ -23,7 +23,11 @@
 - Class図の作成
 - SwiftBowl [overv.io](https://overv.io/Superbowl-tibet/SwiftBowl/) どんどんチケットを書いていきましょう！
 
+#### SwiftBowl Project UML
+![s](readmeResouce/UML2016-3-24.png)
+https://superbowl-tibet.github.io/SwiftBowl.github.io/ObjcUML/index.html
 
+<br>
 # Application Image
 ![s](readmeResouce/Sprash.png)
 ![l](readmeResouce/Login.png)
