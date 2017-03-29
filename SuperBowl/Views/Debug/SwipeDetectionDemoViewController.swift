@@ -59,7 +59,7 @@ final class SwipeDetectionDemoViewController: UIViewController {
     private var audioParameterUpdateTimer: Timer?
     private let audioUpdateInterval: TimeInterval = 0.1
     
-    private var eventHistory: [SwipeEvent] = []
+    fileprivate var eventHistory: [SwipeEvent] = []
     
     private var attenuationRate: Float = 0.95   // volumeの減衰率
     private var volume: Float = 0.0
@@ -152,13 +152,19 @@ final class SwipeDetectionDemoViewController: UIViewController {
             volume = 0.05
         }
         
-        let volumeRate: Float = 1.005
-        volume *= volumeRate
-        
-        if volume > 1.0 {
-            volume = 1.0
+        if let previousRadius = eventHistory.last?.radius
+            , let radius = event.radius {
+
+            let radiusDiff = abs(radius - previousRadius) / radius  // 半径の差が小さいほど良い
+            let volumeIncreaseRate: Float = 1.01 * (1.0 - Float(radiusDiff))
+            volume *= max(volumeIncreaseRate, 0.95)
+            
+            if volume > 1.0 {
+                volume = 1.0
+            }
         }
         
+        eventHistory.append(event)
         updateParameterOnAudioEngine()
         startTimer()
     }
@@ -195,6 +201,8 @@ extension SwipeDetectionDemoViewController: TouchEventDetectionViewDelegate {
         statusLabel.text = message
         
         if eventData.isEndTouch {
+            
+            eventHistory = []
             circleView.isHidden = true
             statusLabel.isHidden = true
         } else {
