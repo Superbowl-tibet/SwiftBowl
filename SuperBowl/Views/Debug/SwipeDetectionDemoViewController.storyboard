@@ -9,14 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SwipeDetectionViewController-->
-        <scene sceneID="Gnc-Ln-Q81">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SwipeDetectionViewController" id="5Fi-rb-Txr" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bZJ-cv-UBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1873" y="205"/>
-        </scene>
         <!--Swipe Detection Demo View Controller-->
         <scene sceneID="flu-4N-n54">
             <objects>
@@ -35,12 +27,9 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-Rq-qb0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="5Fi-rb-Txr" kind="embed" identifier="SwipeDetectionView" id="8th-Ym-xK9"/>
-                                </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6N-aA-48i">
-                                <rect key="frame" x="16" y="28" width="21" height="26"/>
+                                <rect key="frame" x="16" y="28" width="19" height="24"/>
                                 <state key="normal" image="BackButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -83,7 +72,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackButton" width="21" height="26"/>
+        <image name="BackButton" width="19" height="24"/>
         <image name="XXX Group" width="375" height="667"/>
     </resources>
 </document>

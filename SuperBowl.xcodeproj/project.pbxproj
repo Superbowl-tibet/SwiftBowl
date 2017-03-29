@@ -24,7 +24,6 @@
 		ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E551E6AE2C6008D702E /* ResultViewController.swift */; };
 		ED123E651E6AE2C6008D702E /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED123E561E6AE2C6008D702E /* ResultViewController.xib */; };
 		ED123E671E6AE36E008D702E /* IBInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E661E6AE36E008D702E /* IBInstantiatable.swift */; };
-		ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */; };
 		ED4C85821E7FE279002AF543 /* SwipeDetectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */; };
 		ED4C85841E7FE392002AF543 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */; };
 		ED4C85861E7FEA1B002AF543 /* TouchEventDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85851E7FEA1B002AF543 /* TouchEventDetectionView.swift */; };
@@ -394,7 +393,6 @@
 				ED4C858D1E7FEF97002AF543 /* Foundation+Extensions.swift in Sources */,
 				EF44BF051E7D6E51006D8AE8 /* SBTTrack.m in Sources */,
 				ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */,
-				ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */,
 				ED4C85861E7FEA1B002AF543 /* TouchEventDetectionView.swift in Sources */,
 				ED123E5D1E6AE2C6008D702E /* BowlsViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,

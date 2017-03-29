@@ -163,4 +163,18 @@ print(redView.becomeFirstResponder())
 let a = calculateCircleCenter(p1: CGPoint(x: 1, y: 1), p2: CGPoint(x: 2, y: 1), p3: CGPoint(x: 1, y: 2))
 print(a)
 
+class Hoge {
+  var hogeArray: [Int] = [] {
+    didSet {
+      print("array changed: \(hogeArray)")
+    }
+  }
+}
+
+let hoge = Hoge()
+hoge.hogeArray.append(1)
+hoge.hogeArray = []
+hoge.hogeArray.append(3244)
+
+
 //: [Next](@next)

@@ -8,49 +8,14 @@
 
 import UIKit
 
-protocol SwipeDetectionViewControllerDelegate: class {
-    func swipeDetectionViewController(controller: SwipeDetectionViewController, didUpdateEvent event: SwipeDetectionViewController.SwipeEvent)
-}
-
 final class SwipeDetectionViewController: UIViewController, IBInstantiatable {
-
-    
-    
-    // MARK: Public Interfaces
-    struct SwipeEvent {
-        let location: CGPoint
-        let force: CGFloat?
-        let touchedAt: Date
-        let velocity: CGFloat
-        let circleCenterPoint: CGPoint?
-        let radius: CGFloat?
-        
-        static func zero(location: CGPoint, touchedAt: Date) -> SwipeEvent {
-            return self.init(location: location, force: nil, touchedAt: touchedAt, velocity: 0.0, circleCenterPoint: nil, radius: nil)
-        }
-    }
-
-    weak var delegate: SwipeDetectionViewControllerDelegate?
-    
-    /// スワイプ経路の3点から円の中心を算出するが、その3点を選択する際にどれだけ過去にさかのぼるかを決定するパラメータ
-    /// 小さくすると直近のノイズに弱くなり、大きくすると安定するが過去のノイズに弱くなる
-    var circleCalculationInterval = 30 {
-        didSet {
-            if self.circleCalculationInterval <= 0 {
-                fatalError("1以上")
-            }
-        }
-    }
-    var isDebug = false {
-        didSet {
-            self.circleView?.isHidden = !self.isDebug
-        }
-    }
     
     // MARK: -
     @IBOutlet private weak var detectionView: SwipeDetectionView! {
         didSet {
             self.detectionView.delegate = self
+            
+            TouchEventDetectionView.init(coder: NSCoder())
         }
     }
     @IBOutlet private weak var circleView: UIView! {

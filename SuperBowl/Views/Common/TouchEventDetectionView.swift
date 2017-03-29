@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TouchEventDetectionViewDelegate: class {
-    func touchEventDetectionView<Event>(detectionView: TouchEventDetectionView<Event>, didUpdateEvent: Event)
+    func touchEventDetectionView(detectionView: TouchEventDetectionView, didUpdateEvent eventData: TouchEventDetectionView.TouchData)
 }
 
 /**
@@ -17,70 +17,46 @@ protocol TouchEventDetectionViewDelegate: class {
  *
  * # コーディング
  * このクラスでは明示的なselfを記述していない
+ * 明示的にinit関数を記述している：Xcode上でコード補完とJump to Definitionが誤作動せず便利なので
  */
-class TouchEventDetectionView<Event>: UIView {
+final class TouchEventDetectionView: UIView {
 
-    typealias TouchData = (touch: UITouch, date: Date, isEndTouch: Bool)
+    typealias TouchData = (location: CGPoint, force: CGFloat?, date: Date, isEndTouch: Bool)
     
     // MARK: - Public Interfaces
     weak var delegate: TouchEventDetectionViewDelegate?
     
-    // MARK: - Private Accessor
-    private let eventConverter: ([TouchData]) -> Event
-    private var touchDataHistory: [TouchData] = [] {
-        didSet {
-            if let delegate = delegate {
-                let event = eventConverter(touchDataHistory)
-                delegate.touchEventDetectionView(detectionView: self, didUpdateEvent: event)
-            }
-        }
-    }
-    
-    // MARK: - Lifecycle
-    init(frame: CGRect, converter: @escaping ([TouchData]) -> Event) {
-        eventConverter = converter
-        super.init(frame: frame)
-    }
-    
-    @available(*, unavailable)
-    required override init(frame: CGRect) {
-        fatalError("init(frame:, converter:) を使ってください")
-    }
-    
-    @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(frame:, converter:) を使ってください")
-    }
-    
     // MARK: - UIResponder
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchesAdded(touches)
+        handleTouches(touches, isEndTouch: false)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchesAdded(touches)
+        handleTouches(touches, isEndTouch: false)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchesEnded(touches)
+        handleTouches(touches, isEndTouch: true)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchesEnded(touches)
+        handleTouches(touches, isEndTouch: true)
     }
     
     // MARK: -
-    func touchesAdded(_ touches: Set<UITouch>) {
+    func handleTouches(_ touches: Set<UITouch>, isEndTouch: Bool) {
         guard let touch = touches.first else {
             return
         }
-        touchDataHistory.append((touch: touch, date: Date(), isEndTouch: false))
-    }
-    
-    func touchesEnded(_ touches: Set<UITouch>) {
-        guard let touch = touches.first else {
-            return
+
+        let force: CGFloat?
+        if self.traitCollection.forceTouchCapability == .available {
+            force = touch.force
+        } else {
+            force = nil
         }
-        touchDataHistory.append((touch: touch, date: Date(), isEndTouch: true))
+        
+        let data = (location: touch.location(in: self), force: force, date: Date(), isEndTouch: isEndTouch)
+        delegate?.touchEventDetectionView(detectionView: self, didUpdateEvent: data)
     }
 }

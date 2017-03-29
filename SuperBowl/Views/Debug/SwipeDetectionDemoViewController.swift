@@ -8,25 +8,76 @@
 
 import UIKit
 
-class SwipeDetectionDemoViewController: UIViewController {
+/**
+ * TouchEventDetectionViewを使用したスワイプイベントの取得 & 取得した値のAudioEngineへの接続 デモ用
+ *
+ * # コーディング
+ * このクラスでは明示的なselfを記述していない
+ * 明示的にinit関数を記述している：Xcode上でコード補完とJump to Definitionが誤作動せず便利なので
+ */
+final class SwipeDetectionDemoViewController: UIViewController {
+    
+    struct SwipeEvent {
+        let location: CGPoint
+        let force: CGFloat?
+        let velocity: CGFloat
+        let circleCenterPoint: CGPoint?
+        let radius: CGFloat?
+        
+        static var zero: SwipeEvent {
+            return self.init(location: CGPoint.zero, force: nil, velocity: 0.0, circleCenterPoint: nil, radius: nil)
+        }
+    }
     
     @IBOutlet fileprivate weak var statusLabel: UILabel!
     
-    private var contentViewController: SwipeDetectionViewController! {
-        didSet {
-            self.contentViewController.delegate = self
-            self.contentViewController.isDebug = true
-        }
-    }
+    private let swipeDetectionView: TouchEventDetectionView = {
+        
+        let view = TouchEventDetectionView.init()
+        view.autoresizingMask = [ .flexibleWidth, .flexibleHeight ]
+        
+        return view
+    }()
+    
+    fileprivate let circleView: UIView = {
+        
+        let view = UIView.init()
+        view.isUserInteractionEnabled = false
+        view.backgroundColor = UIColor.clear
+        view.autoresizingMask = []
+        view.layer.borderColor = UIColor.white.cgColor
+        view.layer.borderWidth = 1.0
+        view.isHidden = true
+        
+        return view
+    }()
 
-    private let audioEngine = SuperBowlAudioEngine()
-    private var audioParameter = SuperBowlAudioEngine.AudioParameter(highToneVolume: 0.0, lowToneVolume: 0.0)
-    private var audioParameterTimer: Timer?
-    private var attenuationRate: Float = 0.95
+    fileprivate let eventConverter = SwipeEventConverter.init()
+
+    private let audioEngine = SuperBowlAudioEngine.init()
+    private var audioParameter = SuperBowlAudioEngine.AudioParameter.init(highToneVolume: 0.0, lowToneVolume: 0.0)
+    private var audioParameterUpdateTimer: Timer?
+    private let audioUpdateInterval: TimeInterval = 0.1
+    
+    private var eventHistory: [SwipeEvent] = []
+    
+    private var attenuationRate: Float = 0.95   // volumeの減衰率
+    private var volume: Float = 0.0
+    private var highToneVolumeRate: Float = 0.5
+    private var lowToneVolumeRate: Float {
+        return (1.0 - highToneVolumeRate) / 2.0 + 0.5  // 0.1 ~ 0.9の範囲だと低音がほぼ聞こえなかったので補強している
+    }
+    private var centerPointList: [CGPoint] = []
+    private var radiusList: [CGFloat] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        swipeDetectionView.delegate = self
+        swipeDetectionView.frame = view.bounds
+        view.addSubview(swipeDetectionView)
+        view.addSubview(circleView)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -36,14 +87,14 @@ class SwipeDetectionDemoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.audioEngine.play()
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        audioEngine.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         
-        self.audioParameterTimer?.invalidate()
-        self.audioEngine.stop()
+        audioParameterUpdateTimer?.invalidate()
+        audioEngine.stop()
         
         super.viewWillDisappear(animated)
     }
@@ -51,39 +102,32 @@ class SwipeDetectionDemoViewController: UIViewController {
     // MARK: -
     private func startTimer() {
         
-        self.audioParameterTimer?.invalidate()
-        self.audioParameterTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateParameter(timer:)), userInfo: nil, repeats: true)
+        audioParameterUpdateTimer?.invalidate()
+        audioParameterUpdateTimer = Timer.scheduledTimer(timeInterval: audioUpdateInterval, target: self, selector: #selector(updateParameter(timer:)), userInfo: nil, repeats: true)
     }
     
     @objc private func updateParameter(timer: Timer!) {
         
         let zeroLimit: Float = 0.001
         
-        if self.audioParameter.highToneVolume < zeroLimit {
-            self.audioParameter.highToneVolume = 0.0
-        }
-        if self.audioParameter.lowToneVolume < zeroLimit {
-            self.audioParameter.lowToneVolume = 0.0
+        volume *= attenuationRate
+        
+        if volume < zeroLimit {
+            volume = 0.0
         }
         
-        self.audioParameter.highToneVolume *= self.attenuationRate
-        self.audioParameter.lowToneVolume *= self.attenuationRate
+        updateParameterOnAudioEngine()
+    }
+    
+    private func updateParameterOnAudioEngine() {
         
-        self.audioEngine.set(parameter: self.audioParameter)
+        audioParameter.highToneVolume = highToneVolumeRate * volume
+        audioParameter.lowToneVolume = lowToneVolumeRate * volume
+        
+        audioEngine.set(parameter: audioParameter)
     }
     
-    // MARK: - Segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier! {
-        case "SwipeDetectionView":
-            self.contentViewController = segue.destination as! SwipeDetectionViewController
-            
-        default:
-            fatalError("segue.identifierが設定されていません")
-        }
-    }
-    
-    fileprivate func updateEvent(_ event: SwipeDetectionViewController.SwipeEvent) {
+    fileprivate func updateEvent(_ event: SwipeEvent) {
         
         if event.velocity > 0.0 {
             // velocityは高低音の割合を決めて、そこに全体の音量を掛け算して最終的な音量を決める
@@ -93,37 +137,120 @@ class SwipeDetectionDemoViewController: UIViewController {
             let lowerLimit: Float = 50.0
             let upperLimit: Float = 450.0
             let range = upperLimit - lowerLimit
-            let velocity = min(upperLimit, max(lowerLimit, Float(touch.velocity)))
-            let highToneVolume = ((velocity - lowerLimit) / range) * 0.8 + 0.1
+            let velocity = min(upperLimit, max(lowerLimit, Float(event.velocity)))
             
-            self.audioParameter.highToneVolume = highToneVolume
-            self.audioParameter.lowToneVolume = (1.0 - highToneVolume) / 2.0 + 0.5  // 0.1 ~ 0.9の範囲だと低音がほぼ聞こえなかったので補強
+            highToneVolumeRate = ((velocity - lowerLimit) / range) * 0.8 + 0.1
             
-            print(String(format: "v: %.1f, high: %.3f", touch.velocity, highToneVolume))
+        } else {
+
+            centerPointList = []
+            radiusList = []
         }
         
-        self.audioEngine.set(parameter: self.audioParameter)
-        self.startTimer()
+        //volumeの更新処理入れる
+        if volume < 0.05 {
+            volume = 0.05
+        }
+        
+        let volumeRate: Float = 1.005
+        volume *= volumeRate
+        
+        if volume > 1.0 {
+            volume = 1.0
+        }
+        
+        updateParameterOnAudioEngine()
+        startTimer()
     }
 }
 
-extension SwipeDetectionDemoViewController: SwipeDetectionViewControllerDelegate {
-    func swipeDetectionViewController(controller: SwipeDetectionViewController, didUpdateEvent event: SwipeDetectionViewController.SwipeEvent) {
+extension SwipeDetectionDemoViewController: TouchEventDetectionViewDelegate {
+    func touchEventDetectionView(detectionView: TouchEventDetectionView, didUpdateEvent eventData: TouchEventDetectionView.TouchData) {
+        
+        let event = eventConverter.convert(touchData: eventData)
         
         let pressureValue: String
         if let force = event.force {
-            pressureValue = String(format: "%.1f", force)
+            pressureValue = String.init(format: "%.1f", force)
         } else {
             pressureValue = "測定不可"
         }
         
-        var message = String(format: "速度\n%.1f\n\n圧力\n", event.velocity) + pressureValue
+        var message = String.init(format: "速度\n%.1f\n\n圧力\n", event.velocity) + pressureValue
         if let center = event.circleCenterPoint,
             let radius = event.radius {
-            message += String(format: "\n\n中心点\n(%.1f, %.1f)\n\n半径\n%.1f", center.x, center.y, radius)
+            
+            message += String.init(format: "\n\n中心点\n(%.1f, %.1f)\n\n半径\n%.1f", center.x, center.y, radius)
+            
+            let diameter = radius * 2.0
+            circleView.frame.size = CGSize.init(width: diameter, height: diameter)
+            circleView.layer.cornerRadius = radius
+            circleView.center = center
+            circleView.isHidden = false
+            
+        } else {
+            circleView.isHidden = true
         }
-        self.statusLabel.text = message
         
-        self.updateEvent(event)
+        statusLabel.text = message
+        
+        if eventData.isEndTouch {
+            circleView.isHidden = true
+            statusLabel.isHidden = true
+        } else {
+            statusLabel.isHidden = false
+        }
+        
+        updateEvent(event)
+    }
+}
+
+// MARK: - Swipe Event Converter
+final class SwipeEventConverter {
+
+    private var history: [TouchEventDetectionView.TouchData] = []
+    
+    func convert(touchData: TouchEventDetectionView.TouchData) -> SwipeDetectionDemoViewController.SwipeEvent {
+        
+        /// スワイプ経路の3点から円の中心を算出するが、その3点を選択する際にどれだけ過去にさかのぼるかを決定するパラメータ
+        /// 小さくすると直近のノイズに弱くなり、大きくすると安定するが過去のノイズに弱くなる
+        let circleCalculationInterval = 30
+        
+        let point = touchData.location
+        let velocity: CGFloat
+        var centerPoint: CGPoint? = nil
+        var radius: CGFloat? = nil
+        
+        if let previousData = history.last {
+            let previousPoint = previousData.location
+            let interval = touchData.date.timeIntervalSince(previousData.date)
+            let distance = (point - previousPoint).length
+            
+            velocity = distance / CGFloat(interval)
+
+        } else {
+            velocity = 0.0
+        }
+        
+        let data2Index = history.count - circleCalculationInterval
+        let data1Index = history.count - (circleCalculationInterval * 2)
+        
+        if data1Index >= 0 {
+            let data1 = history[data1Index]
+            let data2 = history[data2Index]
+            
+            let point1 = data1.location
+            let point2 = data2.location
+            
+            if let center = CGPoint.calculateCircleCenter(p1: point1, p2: point2, p3: point) {
+                
+                radius = (center - point1).length
+                centerPoint = center
+            }
+        }
+        
+        history.append(touchData)
+        
+        return SwipeDetectionDemoViewController.SwipeEvent(location: point, force: touchData.force, velocity: velocity, circleCenterPoint: centerPoint, radius: radius)
     }
 }
