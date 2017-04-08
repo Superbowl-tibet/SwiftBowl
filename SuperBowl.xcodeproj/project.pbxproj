@@ -24,14 +24,15 @@
 		ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E551E6AE2C6008D702E /* ResultViewController.swift */; };
 		ED123E651E6AE2C6008D702E /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED123E561E6AE2C6008D702E /* ResultViewController.xib */; };
 		ED123E671E6AE36E008D702E /* IBInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED123E661E6AE36E008D702E /* IBInstantiatable.swift */; };
-		ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */; };
 		ED4C85821E7FE279002AF543 /* SwipeDetectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */; };
 		ED4C85841E7FE392002AF543 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */; };
-		ED4C85861E7FEA1B002AF543 /* SwipeDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */; };
+		ED4C85861E7FEA1B002AF543 /* TouchEventDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85851E7FEA1B002AF543 /* TouchEventDetectionView.swift */; };
 		ED4C85891E7FEE67002AF543 /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C85881E7FEE67002AF543 /* DebugMenuViewController.swift */; };
 		ED4C858B1E7FEE6F002AF543 /* DebugMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4C858A1E7FEE6F002AF543 /* DebugMenuViewController.storyboard */; };
 		ED4C858D1E7FEF97002AF543 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C858C1E7FEF97002AF543 /* Foundation+Extensions.swift */; };
 		ED4C858F1E7FF120002AF543 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C858E1E7FF120002AF543 /* UIViewController+Extensions.swift */; };
+		EDB474531E863AD40076E6BE /* SwipeDetectionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB474521E863AD40076E6BE /* SwipeDetectionDemoViewController.swift */; };
+		EDB474551E863AE10076E6BE /* SwipeDetectionDemoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB474541E863AE10076E6BE /* SwipeDetectionDemoViewController.storyboard */; };
 		EF44BF021E7D69B2006D8AE8 /* SBTAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44BF011E7D69B2006D8AE8 /* SBTAudioEngine.m */; };
 		EF44BF051E7D6E51006D8AE8 /* SBTTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44BF041E7D6E51006D8AE8 /* SBTTrack.m */; };
 		EF44BF081E7D6EA1006D8AE8 /* SBTAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44BF071E7D6EA1006D8AE8 /* SBTAudioFile.m */; };
@@ -64,11 +65,13 @@
 		ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDetectionViewController.swift; sourceTree = "<group>"; };
 		ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SwipeDetectionViewController.storyboard; sourceTree = "<group>"; };
 		ED4C85831E7FE392002AF543 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDetectionView.swift; sourceTree = "<group>"; };
+		ED4C85851E7FEA1B002AF543 /* TouchEventDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEventDetectionView.swift; sourceTree = "<group>"; };
 		ED4C85881E7FEE67002AF543 /* DebugMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
 		ED4C858A1E7FEE6F002AF543 /* DebugMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DebugMenuViewController.storyboard; sourceTree = "<group>"; };
 		ED4C858C1E7FEF97002AF543 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		ED4C858E1E7FF120002AF543 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		EDB474521E863AD40076E6BE /* SwipeDetectionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDetectionDemoViewController.swift; sourceTree = "<group>"; };
+		EDB474541E863AE10076E6BE /* SwipeDetectionDemoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SwipeDetectionDemoViewController.storyboard; sourceTree = "<group>"; };
 		EF44BF001E7D69B2006D8AE8 /* SBTAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTAudioEngine.h; sourceTree = "<group>"; };
 		EF44BF011E7D69B2006D8AE8 /* SBTAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTAudioEngine.m; sourceTree = "<group>"; };
 		EF44BF031E7D6E51006D8AE8 /* SBTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTTrack.h; sourceTree = "<group>"; };
@@ -208,7 +211,7 @@
 				ED123E4E1E6AE2C6008D702E /* CircleView.swift */,
 				ED123E4F1E6AE2C6008D702E /* JustCircleView.swift */,
 				ED123E501E6AE2C6008D702E /* ShiningView.swift */,
-				ED4C85851E7FEA1B002AF543 /* SwipeDetectionView.swift */,
+				ED4C85851E7FEA1B002AF543 /* TouchEventDetectionView.swift */,
 				ED4C857F1E7FE271002AF543 /* SwipeDetectionViewController.swift */,
 				ED4C85811E7FE279002AF543 /* SwipeDetectionViewController.storyboard */,
 			);
@@ -238,6 +241,8 @@
 			children = (
 				ED4C85881E7FEE67002AF543 /* DebugMenuViewController.swift */,
 				ED4C858A1E7FEE6F002AF543 /* DebugMenuViewController.storyboard */,
+				EDB474521E863AD40076E6BE /* SwipeDetectionDemoViewController.swift */,
+				EDB474541E863AE10076E6BE /* SwipeDetectionDemoViewController.storyboard */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				EF44BF111E7D9498006D8AE8 /* sample-1.aif in Resources */,
 				ED123E651E6AE2C6008D702E /* ResultViewController.xib in Resources */,
 				ED4C85821E7FE279002AF543 /* SwipeDetectionViewController.storyboard in Resources */,
+				EDB474551E863AE10076E6BE /* SwipeDetectionDemoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +381,7 @@
 			files = (
 				ED4C85891E7FEE67002AF543 /* DebugMenuViewController.swift in Sources */,
 				EF44BF021E7D69B2006D8AE8 /* SBTAudioEngine.m in Sources */,
+				EDB474531E863AD40076E6BE /* SwipeDetectionDemoViewController.swift in Sources */,
 				ED123E621E6AE2C6008D702E /* LoginViewController.swift in Sources */,
 				ED123E601E6AE2C6008D702E /* JustCircleView.swift in Sources */,
 				ED123E5F1E6AE2C6008D702E /* CircleView.swift in Sources */,
@@ -386,8 +393,7 @@
 				ED4C858D1E7FEF97002AF543 /* Foundation+Extensions.swift in Sources */,
 				EF44BF051E7D6E51006D8AE8 /* SBTTrack.m in Sources */,
 				ED123E641E6AE2C6008D702E /* ResultViewController.swift in Sources */,
-				ED4C85801E7FE271002AF543 /* SwipeDetectionViewController.swift in Sources */,
-				ED4C85861E7FEA1B002AF543 /* SwipeDetectionView.swift in Sources */,
+				ED4C85861E7FEA1B002AF543 /* TouchEventDetectionView.swift in Sources */,
 				ED123E5D1E6AE2C6008D702E /* BowlsViewController.swift in Sources */,
 				951054741E6A517600A25B8F /* AppDelegate.swift in Sources */,
 				ED123E5C1E6AE2C6008D702E /* CGRect+Circle.swift in Sources */,

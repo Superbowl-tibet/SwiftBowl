@@ -163,4 +163,43 @@ print(redView.becomeFirstResponder())
 let a = calculateCircleCenter(p1: CGPoint(x: 1, y: 1), p2: CGPoint(x: 2, y: 1), p3: CGPoint(x: 1, y: 2))
 print(a)
 
+class Hoge {
+  var hogeArray: [Int] = [] {
+    didSet {
+      print("array changed: \(hogeArray)")
+    }
+  }
+}
+
+let hoge = Hoge()
+hoge.hogeArray.append(1)
+hoge.hogeArray = []
+hoge.hogeArray.append(3244)
+
+
+struct Fuga {
+  private let fuga = "fugastr"
+  
+  func some() {
+    print(#function)
+    print(fuga)
+  }
+}
+
+extension Fuga {
+  private var fuga: Int {
+    return 2
+  }
+  
+  func someExt() {
+    print(#function)
+    print(fuga)
+  }
+}
+
+print(Fuga().some())
+print(Fuga().someExt())
+
+
+
 //: [Next](@next)

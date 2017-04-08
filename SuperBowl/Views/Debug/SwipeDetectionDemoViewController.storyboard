@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e2J-7S-hBG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Swipe Detection Demo View Controller-->
+        <scene sceneID="flu-4N-n54">
+            <objects>
+                <viewController id="e2J-7S-hBG" customClass="SwipeDetectionDemoViewController" customModule="SuperBowl" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qIU-6I-rnI"/>
+                        <viewControllerLayoutGuide type="bottom" id="QQg-Kt-4D2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YbP-Xq-EQI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="XXX Group" translatesAutoresizingMaskIntoConstraints="NO" id="QeK-xd-2Rn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-Rq-qb0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6N-aA-48i">
+                                <rect key="frame" x="16" y="28" width="19" height="24"/>
+                                <state key="normal" image="BackButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="popWithSender:" destination="e2J-7S-hBG" eventType="touchUpInside" id="7ju-DJ-kcb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円を描くようになぞってね" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNy-Kj-AsQ">
+                                <rect key="frame" x="83" y="323" width="208" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6bG-Rq-qb0" secondAttribute="trailing" id="63K-IB-IND"/>
+                            <constraint firstItem="6bG-Rq-qb0" firstAttribute="leading" secondItem="YbP-Xq-EQI" secondAttribute="leading" id="9Iq-VE-DDT"/>
+                            <constraint firstItem="aNy-Kj-AsQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YbP-Xq-EQI" secondAttribute="leading" constant="16" id="Ab5-xN-vWY"/>
+                            <constraint firstItem="QeK-xd-2Rn" firstAttribute="leading" secondItem="YbP-Xq-EQI" secondAttribute="leading" id="BU2-p6-Ehd"/>
+                            <constraint firstItem="aNy-Kj-AsQ" firstAttribute="centerY" secondItem="YbP-Xq-EQI" secondAttribute="centerY" id="Bw9-Ky-DOQ"/>
+                            <constraint firstItem="aNy-Kj-AsQ" firstAttribute="centerX" secondItem="YbP-Xq-EQI" secondAttribute="centerX" id="Hsh-qr-mHj"/>
+                            <constraint firstItem="QeK-xd-2Rn" firstAttribute="top" secondItem="YbP-Xq-EQI" secondAttribute="top" id="ePg-2e-snT"/>
+                            <constraint firstItem="t6N-aA-48i" firstAttribute="top" secondItem="YbP-Xq-EQI" secondAttribute="top" constant="28" id="f7s-da-gS1"/>
+                            <constraint firstItem="6bG-Rq-qb0" firstAttribute="top" secondItem="YbP-Xq-EQI" secondAttribute="top" id="guM-u0-b0l"/>
+                            <constraint firstItem="t6N-aA-48i" firstAttribute="leading" secondItem="YbP-Xq-EQI" secondAttribute="leading" constant="16" id="l5j-KB-VAE"/>
+                            <constraint firstAttribute="trailing" secondItem="QeK-xd-2Rn" secondAttribute="trailing" id="uIa-Zk-jy3"/>
+                            <constraint firstItem="QQg-Kt-4D2" firstAttribute="top" secondItem="6bG-Rq-qb0" secondAttribute="bottom" id="v6p-f4-isk"/>
+                            <constraint firstItem="QQg-Kt-4D2" firstAttribute="top" secondItem="QeK-xd-2Rn" secondAttribute="bottom" id="zK9-nI-l26"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="t6N-aA-48i" id="7uD-Mw-2zk"/>
+                        <outlet property="statusLabel" destination="aNy-Kj-AsQ" id="Xsu-dB-uFD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkc-0p-hc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192.8" y="205.54722638680661"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackButton" width="19" height="24"/>
+        <image name="XXX Group" width="375" height="667"/>
+    </resources>
+</document>
