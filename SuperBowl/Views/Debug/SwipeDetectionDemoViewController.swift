@@ -30,6 +30,7 @@ final class SwipeDetectionDemoViewController: UIViewController {
     }
     
     @IBOutlet fileprivate weak var statusLabel: UILabel!
+    @IBOutlet fileprivate weak var backButton: UIButton!
     
     private let swipeDetectionView: TouchEventDetectionView = {
         
@@ -78,6 +79,8 @@ final class SwipeDetectionDemoViewController: UIViewController {
         swipeDetectionView.frame = view.bounds
         view.addSubview(swipeDetectionView)
         view.addSubview(circleView)
+        
+        view.bringSubview(toFront: backButton)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

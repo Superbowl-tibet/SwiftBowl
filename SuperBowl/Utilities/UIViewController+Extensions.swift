@@ -14,7 +14,7 @@ extension UIViewController {
     }
     
     @IBAction func pop(sender: AnyObject!) {
-        self.navigationController?.popViewController(animated: true)
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 }
 

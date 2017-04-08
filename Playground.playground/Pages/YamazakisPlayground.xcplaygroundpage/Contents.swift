@@ -177,4 +177,29 @@ hoge.hogeArray = []
 hoge.hogeArray.append(3244)
 
 
+struct Fuga {
+  private let fuga = "fugastr"
+  
+  func some() {
+    print(#function)
+    print(fuga)
+  }
+}
+
+extension Fuga {
+  private var fuga: Int {
+    return 2
+  }
+  
+  func someExt() {
+    print(#function)
+    print(fuga)
+  }
+}
+
+print(Fuga().some())
+print(Fuga().someExt())
+
+
+
 //: [Next](@next)
