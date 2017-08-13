@@ -101,21 +101,12 @@ static OSStatus mixerOutputCallback(void *inRefCon,
 
 - (OSStatus)prepareAUGraph
 {
-    // 1. AUGraphの準備
+    // AUGraphの準備
     NewAUGraph(&_graph);
     AUGraphOpen(_graph);
     
-    // 2. AUNodeの作成
+    // AUNodeの作成
     AudioComponentDescription cd;
-    
-//    cd.componentType = kAudioUnitType_FormatConverter;
-//    cd.componentSubType = kAudioUnitSubType_AUiPodTimeOther;
-//    cd.componentManufacturer = kAudioUnitManufacturer_Apple;
-//    cd.componentFlags = 0;
-//    cd.componentFlagsMask = 0;
-//    AUNode aUiPodTimeNode;
-//    AUGraphAddNode(_graph, &cd, &aUiPodTimeNode);
-//    AUGraphNodeInfo(_graph, aUiPodTimeNode, NULL, &_auiPodTimeUnit);
     
     cd.componentType = kAudioUnitType_Mixer;
     cd.componentSubType = kAudioUnitSubType_MultiChannelMixer;
@@ -134,18 +125,6 @@ static OSStatus mixerOutputCallback(void *inRefCon,
     AUGraphAddNode(_graph, &cd, &remoteIONode);
     AUGraphNodeInfo(_graph, remoteIONode, NULL, &_remoteIOUnit);
     
-    // 3. Callbackの作成
-//    {
-//        AURenderCallbackStruct callbackStruct;
-//        callbackStruct.inputProc = recordTrackRenderCallback;
-//        callbackStruct.inputProcRefCon = (__bridge void*)self;
-//        AUGraphSetNodeInputCallback(_graph,
-//                                    _mixerNode,
-//                                    self.mixerBusCount,
-//                                    &callbackStruct);
-//        ++self.mixerBusCount;
-//    }
-    
     AURenderCallbackStruct callbackStruct;
     callbackStruct.inputProc = mixerOutputCallback;
     callbackStruct.inputProcRefCon = (__bridge void*)self;;
@@ -154,12 +133,7 @@ static OSStatus mixerOutputCallback(void *inRefCon,
                                 0,
                                 &callbackStruct);
     
-    
-//    AUGraphAddRenderNotify(_graph,
-//                           renderNotify,
-//                           (__bridge void*)self);
-    
-    // 5. Nodeの接続
+    // Nodeの接続
     // AUMixer -> Remote IO
     AUGraphConnectNodeInput(_graph,
                             _mixerNode, 0,
@@ -171,7 +145,7 @@ static OSStatus mixerOutputCallback(void *inRefCon,
 }
 
 - (void)prepareAudioNodeProperty {
-    // 4. 各NodeをつなぐためのASBDの設定
+    // 各NodeをつなぐためのASBDの設定
     AudioStreamBasicDescription asbd = {0};
     UInt32 size = sizeof(asbd);
     
@@ -185,31 +159,6 @@ static OSStatus mixerOutputCallback(void *inRefCon,
     outputFormat.mChannelsPerFrame = 2;
     outputFormat.mBitsPerChannel = 32;
     outputFormat.mReserved = 0;
-    // converter IO
-    //    AudioUnitSetProperty(_converterUnit,
-    //                         kAudioUnitProperty_StreamFormat,
-    //                         kAudioUnitScope_Input,
-    //                         0,
-    //                         &outputFormat, size);
-    //
-    //    AudioUnitSetProperty(_converterUnit,
-    //                         kAudioUnitProperty_StreamFormat,
-    //                         kAudioUnitScope_Output,
-    //                         0,
-    //                         &outputFormat, size);
-    
-//    // aUiPodTime IO
-//    AudioUnitSetProperty(_auiPodTimeUnit,
-//                         kAudioUnitProperty_StreamFormat,
-//                         kAudioUnitScope_Output,
-//                         0,
-//                         &outputFormat, size);
-//    
-//    AudioUnitSetProperty(_auiPodTimeUnit,
-//                         kAudioUnitProperty_StreamFormat,
-//                         kAudioUnitScope_Input,
-//                         0,
-//                         &outputFormat, size);
     
     // Mixier
     AudioUnitSetProperty(_mixerUnit,
